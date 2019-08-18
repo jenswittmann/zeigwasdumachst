@@ -1,40 +1,65 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title> Test </title>
-    <style>
-    *{
-      font-family: sans-serif;
-      outline: 1px solid red;
-    }
-    .grid div
-    {
-      width: 33%;
-      height: 100px;
-      float: left;
-    }
-
-    </style>
-
-  </head>
-
-  <body>
-    <div align="center">
-    <h1>
-      Titel des Projekts
-    </h1>
-    <p>
-      aussagekräftiger Text
-    </p>
-  </div>
-  <div class="grid">
-    <div>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finder App</title>
+    <link rel="stylesheet" type="text/css" href="css/jTinder.css">
+</head>
+<body>
+    <!-- start padding container -->
+    <div class="wrap">
+        <!-- start jtinder container -->
+        <div id="tinderslide">
+            <ul>
+              <li class="pane1">
+                  <div class="img"></div>
+                  <div>Raspberry Pi läuft</div>
+                  <div class="like"></div>
+                  <div class="dislike"></div>
+              </li>
+              <li class="pane2">
+                  <div class="img"></div>
+                  <div>ZWDM Ladengeschäft</div>
+                  <div class="like"></div>
+                  <div class="dislike"></div>
+              </li>
+              <li class="pane3">
+                  <div class="img"></div>
+                  <div>Workshops JETZT</div>
+                  <div class="like"></div>
+                  <div class="dislike"></div>
+              </li>
+              <li class="pane4">
+                  <div class="img"></div>
+                  <div>Frisch gestrichen...</div>
+                  <div class="like"></div>
+                  <div class="dislike"></div>
+              </li>
+            </ul>
+        </div>
+        <!-- end jtinder container -->
     </div>
-    <div>
-    </div>
-    <div>
-    </div>
-  </div>
+    <!-- end padding container -->
 
-  </body>
+    <!-- jTinder trigger by buttons  -->
+    <div class="actions">
+        <a href="#" class="dislike"><i></i></a>
+        <a href="#" class="like"><i></i></a>
+    </div>
 
+    <!-- jTinder status text  -->
+    <div id="status"></div>
+
+    <!-- jQuery lib -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- transform2d lib -->
+    <script type="text/javascript" src="js/jquery.transform2d.js"></script>
+    <!-- jTinder lib -->
+    <script type="text/javascript" src="js/jquery.jTinder.js"></script>
+
+    <script type="text/javascript" src="js/js.cookie.js"></script>
+    <!-- jTinder initialization script -->
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
 </html>
