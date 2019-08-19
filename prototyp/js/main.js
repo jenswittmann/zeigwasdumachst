@@ -6,12 +6,22 @@ console.log('[Finder App] Start');
 const visitedWebsite = Cookies.get('visited-website');
 console.log('[Finder App] Cookie gesetzt:', visitedWebsite);
 
-if (visitedWebsite === 'true') {
-  console.log('[Finder App] Finder App anzeigen');
-} else {
-  console.log('[Finder App] Startseite anzeigen');
-  Cookies.set('visited-website', 'true');
-}
+$('.page-start').show();
+
+/**
+ * Startpage
+ */
+$('.btn-finder').on('click', (event) => {
+  console.log('[Finder App] Button Click (Startpage) => (Finder)');
+  $('.page-start').hide();
+  $('.page-finder').show();
+});
+
+$('.btn-bookmarks').on('click', (event) => {
+  console.log('[Finder App] Button Click (Finder) => (Bookmarks)');
+  $('.page-finder').hide();
+  $('.page-bookmarks').show();
+});
 
 /**
  * jTinder initialization
