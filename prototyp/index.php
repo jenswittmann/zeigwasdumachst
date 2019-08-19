@@ -21,19 +21,23 @@
 				$instagram = new \InstagramScraper\Instagram();
 				
 				# posts mit hashtag anfordern
-				$medias = $instagram->getMedias('zeigwasdumachst', 10);
+				$medias = $instagram->getCurrentTopMediasByTagName('dessau');
 					
-				# alle posts in schleife ausgeben
-				foreach($medias as $media) {
-					
-					?>
-						<li class="pane1">
-							<img src="<?php echo $media->getImageHighResolutionUrl(); ?>" width="300" alt="">
-							<div style="font-size: 10px;"><?php echo $media->getCaption(); ?></div>
-							<div class="like"></div>
-							<div class="dislike"></div>
-						</li>
-					<?php
+				if (count($medias) > 0) {
+				
+					# alle posts in schleife ausgeben
+					foreach($medias as $media) {
+						
+						?>
+							<li class="pane1">
+								<img src="<?php echo $media->getImageHighResolutionUrl(); ?>" width="300" alt="">
+								<div style="font-size: 10px;"><?php echo $media->getCaption(); ?></div>
+								<div class="like"></div>
+								<div class="dislike"></div>
+							</li>
+						<?php
+						
+					}
 					
 				}
 				
