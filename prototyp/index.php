@@ -12,30 +12,33 @@
         <!-- start jtinder container -->
         <div id="tinderslide">
             <ul>
-              <li class="pane1">
-                  <div class="img"></div>
-                  <div>Raspberry Pi läuft</div>
-                  <div class="like"></div>
-                  <div class="dislike"></div>
-              </li>
-              <li class="pane2">
-                  <div class="img"></div>
-                  <div>ZWDM Ladengeschäft</div>
-                  <div class="like"></div>
-                  <div class="dislike"></div>
-              </li>
-              <li class="pane3">
-                  <div class="img"></div>
-                  <div>Workshops JETZT</div>
-                  <div class="like"></div>
-                  <div class="dislike"></div>
-              </li>
-              <li class="pane4">
-                  <div class="img"></div>
-                  <div>Frisch gestrichen...</div>
-                  <div class="like"></div>
-                  <div class="dislike"></div>
-              </li>
+    
+			    <?php
+				
+				# bibilothek initalisieren
+				use InstagramScraper\Exception\InstagramException;
+				require __DIR__ . '/vendor/autoload.php';
+				$instagram = new \InstagramScraper\Instagram();
+				
+				# posts mit hashtag anfordern
+				$medias = $instagram->getMedias('zeigwasdumachst', 10);
+					
+				# alle posts in schleife ausgeben
+				foreach($medias as $media) {
+					
+					?>
+						<li class="pane1">
+							<img src="<?php echo $media->getImageHighResolutionUrl(); ?>" width="300" alt="">
+							<div style="font-size: 10px;"><?php echo $media->getCaption(); ?></div>
+							<div class="like"></div>
+							<div class="dislike"></div>
+						</li>
+					<?php
+					
+				}
+				
+				?>
+				
             </ul>
         </div>
         <!-- end jtinder container -->
