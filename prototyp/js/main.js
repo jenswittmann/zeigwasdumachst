@@ -9,17 +9,20 @@ console.log('[Finder App] Cookie gesetzt:', visitedWebsite);
 $('.page-start').show();
 
 /**
- * Startpage
+ * Buttons
  */
+ $('.btn-start').on('click', (event) => {
+   $('.page').hide();
+   $('.page-start').show();
+ });
+
 $('.btn-finder').on('click', (event) => {
-  console.log('[Finder App] Button Click (Startpage) => (Finder)');
-  $('.page-start').hide();
+  $('.page').hide();
   $('.page-finder').show();
 });
 
 $('.btn-bookmarks').on('click', (event) => {
-  console.log('[Finder App] Button Click (Finder) => (Bookmarks)');
-  $('.page-finder').hide();
+  $('.page').hide();
   $('.page-bookmarks').show();
 });
 

@@ -10,7 +10,7 @@
 <body>
   <div class="app">
     <div class="app-header">
-      <a href="#" class="header-logo" title="Zeig, was Du machst!">Zeig, was Du machst!</a>
+      <a href="#" class="header-logo btn-finder" title="Zeig, was Du machst!">Zeig, was Du machst!</a>
     </div>
 
     <div class="app-page">
@@ -30,35 +30,39 @@
       </div>
       <div class="page page-finder">
           <h1>FINDER APP</h1>
-
-          <button class="btn-bookmarks">Gespeicherte Posts anzeigen</button>
           <!-- start padding container -->
           <div class="wrap">
               <!-- start jtinder container -->
               <div id="tinderslide">
                   <ul>
-                <?php
-              # bibilothek initalisieren
-              use InstagramScraper\Exception\InstagramException;
-              require __DIR__ . '/vendor/autoload.php';
-              $instagram = new \InstagramScraper\Instagram();
-              # posts mit hashtag anfordern
-              $medias = $instagram->getCurrentTopMediasByTagName('dessau');
-
-              if (count($medias) > 0) {
-                # alle posts in schleife ausgeben
-                foreach($medias as $media) {
-                  ?>
-                    <li class="pane1">
-                      <img src="<?php echo $media->getImageHighResolutionUrl(); ?>" width="300" alt="">
-                      <div style="font-size: 10px;"><?php echo $media->getCaption(); ?></div>
-                      <div class="like"></div>
-                      <div class="dislike"></div>
-                    </li>
                   <?php
-                }
-              }
-              ?>
+          				# bibilothek initalisieren
+          				use InstagramScraper\Exception\InstagramException;
+          				require __DIR__ . '/vendor/autoload.php';
+          				$instagram = new \InstagramScraper\Instagram();
+
+          				# posts mit hashtag anfordern
+          				$medias = $instagram->getCurrentTopMediasByTagName('dessau');
+          				if (count($medias) > 0) {
+                    # tag filter
+                    if (isset($_GET['tag'])) {
+                      $tagFilter = $_GET['tag'];
+                    }
+          					# alle posts in schleife ausgeben
+          					foreach($medias as $media) {
+          						if (!isset($tagFilter) || (isset($tagFilter) && strpos($media->getCaption(), '#'.$tagFilter) !== false)) {
+          						?>
+          							<li class="pane1">
+          								<img src="<?php echo $media->getImageHighResolutionUrl(); ?>" width="300" alt="">
+          								<div style="font-size: 10px;"><?php echo $media->getCaption(); ?></div>
+          								<div class="like"></div>
+          								<div class="dislike"></div>
+          							</li>
+          						<?php
+          						}
+          					}
+          				}
+          				?>
                   </ul>
               </div>
               <!-- end jtinder container -->
@@ -81,10 +85,10 @@
 
     <nav class="app-menu" role="navigation">
       <ul>
-        <li>Filter</li>
-        <li>Bookmarks</li>
-        <li>Share</li>
-        <li>Info</li>
+        <li class="btn-filter">Filter</li>
+        <li class="btn-bookmarks">Bookmarks</li>
+        <li class="btn-share">Share</li>
+        <li class="btn-start">Info</li>
       </ul>
     </nav>
   </div>
