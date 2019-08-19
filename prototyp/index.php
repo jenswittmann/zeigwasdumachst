@@ -22,11 +22,14 @@
 				
 				# posts mit hashtag anfordern
 				$medias = $instagram->getCurrentTopMediasByTagName('dessau');
-					
+			
 				if (count($medias) > 0) {
 				
 					# alle posts in schleife ausgeben
 					foreach($medias as $media) {
+			
+						if (strpos($media->getCaption(), '#'.$_GET['tag']) !== false) {
+							
 						
 						?>
 							<li class="pane1">
@@ -36,6 +39,8 @@
 								<div class="dislike"></div>
 							</li>
 						<?php
+							
+						}
 						
 					}
 					
