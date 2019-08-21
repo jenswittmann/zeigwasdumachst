@@ -11,7 +11,7 @@
 		
 		<div class="app">
 		    
-		    <h2 class="app-header">Findr</h2>
+		    <h2 class="app-header">Findr APP</h2>
 		
 		    <div class="app-page">
 		      
