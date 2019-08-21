@@ -1,4 +1,7 @@
-console.log('[Finder App] Start');
+/**
+ * Variablen
+ */
+const activeClass = 'is-active';
 
 /**
  * Cookie handling
@@ -6,27 +9,23 @@ console.log('[Finder App] Start');
 const visitedWebsite = Cookies.get('visited-website');
 console.log('[Finder App] Cookie gesetzt:', visitedWebsite);
 
-/**
- * Variablen
- */
-const activeClass = 'is-active';
+if (visitedWebsite) {
+	$('.page-start').removeClass(activeClass);
+}
 
 /**
  * Buttons
  */
  $('.btn-start').on('click', (event) => {
-   $('.page').removeClass(activeClass);
-   $('.page-start').addClass(activeClass);
+   $('.page-start').toggleClass(activeClass);
  });
 
 $('.btn-finder').on('click', (event) => {
   $('.page').removeClass(activeClass);
-  $('.page-finder').addClass(activeClass);
 });
 
-$('.btn-bookmarks').on('click', (event) => {
-  $('.page').removeClass(activeClass);
-  $('.page-bookmarks').addClass(activeClass);
+$('.btn-share').on('click', (event) => {
+  $('.page-share').toggleClass(activeClass);
 });
 
 /**

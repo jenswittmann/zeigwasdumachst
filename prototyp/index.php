@@ -62,25 +62,44 @@
 		    	</div>
 		    	
 		      	<div class="page page-start is-active">
-					<h1>LOGO</h1>
-					<p>
-						Wir, vom Projekt „Zeig, was Du machst!”, arbeiten derzeit an einem Webportal für Dessau-Roßlau. Nach dem Tinder-Prinzip sollen algorithmusbasierte Empfehlungen für Aktivitäten und Veranstaltungen in der Stadt vorgeschlagen werden. Die Zielgruppe sind junge Menschen zwischen 12 und 27 Jahren. Die Anwendung nutzt Beiträge der Plattform Instagram, die mit dem Hashtag #dessaumatchen markiert sind. Wir würden uns freuen, wenn Interesse an einer Zusammenarbeit durch Verwendung des Hashtags besteht. Gerne können wir dann Weiteres klären.
-					<p>
-					<button class="btn-finder">Los geht's</button>
+					<div class="pa1">
+						<p>
+							Wir, vom Projekt „Zeig, was Du machst!”, arbeiten derzeit an einem Webportal für Dessau-Roßlau. Nach dem Tinder-Prinzip sollen algorithmusbasierte Empfehlungen für Aktivitäten und Veranstaltungen in der Stadt vorgeschlagen werden. Die Zielgruppe sind junge Menschen zwischen 12 und 27 Jahren. Die Anwendung nutzt Beiträge der Plattform Instagram, die mit dem Hashtag #dessaumatchen markiert sind. Wir würden uns freuen, wenn Interesse an einer Zusammenarbeit durch Verwendung des Hashtags besteht. Gerne können wir dann Weiteres klären.
+						<p>
+						<button class="btn-finder">Los geht's</button>
+						<ul class="small">
+							<li><a href="https://vonderrolle.org/impressum.html" target="_blank">Impressum</a></li>
+							<li><a href="https://vonderrolle.org/datenschutzerklaerung.html" target="_blank">Datenschutzerklärung</a></li>
+						</ul>
+					</div>
 				</div>
 		      
-				<div class="page page-bookmarks">
-					<h1>BOOKMARKS</h1>
+				<div class="page page-share page-half white center bg-black">
+					<div class="pa1">
+						<h3>Share</h3>
+						<ul>
+							<li class="mb1"><a href="whatsapp://send?text=Teste%20die%20Findr%20APP%3A%20https%3A%2F%2Fprototyp.zeig-was-du-machst.de">WhatsApp</a></li>
+							<li><a href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fprototyp.zeig-was-du-machst.de" target="_blank">Facebook</a></li>
+						</ul>
+					</div>
 				</div>
 		    
 		    </div>
 		
 		    <nav class="app-menu" role="navigation">
 				<ul>
-					<!--li class="btn-filter">Filter</li-->
-					<li class="btn-bookmarks">Bookmarks</li>
-					<li class="btn-share">Share</li>
-					<li class="btn-start">Info</li>
+					<!--li class="btn-filter">
+						<img src="img/filter.svg" alt="">
+					</li-->
+					<!--li class="btn-bookmarks">
+						<img src="img/favorite.svg" alt="">
+					</li-->
+					<li class="btn-share">
+						<img src="img/share.svg" alt="">
+					</li>
+					<li class="btn-start">
+						<img src="img/info.svg" alt="">
+					</li>
 				</ul>
 		    </nav>
 		    

@@ -39,7 +39,7 @@ h1 {
 
 .app-page {
   width: 100%;
-  height: calc(100% - 120px);
+  height: calc(100vh - var(--header-height) - var(--menu-height));
 }
 
 .app-menu {
@@ -77,11 +77,58 @@ h1 {
   z-index: 2;
   overflow: scroll;
   display: none;
+  width: 100%;
   height: calc(100vh - var(--header-height) - var(--menu-height));
   background-color: white;
   -webkit-overflow-scrolling: touch;
 }
 
+.page-half {
+  position: fixed;
+  max-height: 50vh;
+}
+
 .page.is-active {
 	display: block;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+button {
+	color: white;
+	padding: .5rem 2rem;
+	background-color: black;
+	border: 0;
+}
+
+a {
+	color: black;
+}
+
+.small {
+	font-size: .5rem;
+}
+
+.white,
+.white a {
+	color: white;
+}
+
+.center {
+	text-align: center;
+}
+
+.pa1 {
+	padding: 1rem;
+}
+
+.mb1 {
+	margin-bottom: 1rem;
+}
+
+.bg-black {
+	background-color: black;	
 }
