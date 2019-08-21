@@ -42,7 +42,7 @@
           				$instagram = new \InstagramScraper\Instagram();
 
           				# posts mit hashtag anfordern
-          				$medias = $instagram->getCurrentTopMediasByTagName('dessau');
+          				$medias = $instagram->getCurrentTopMediasByTagName('dessaumatchen');
           				if (count($medias) > 0) {
                     # tag filter
                     if (isset($_GET['tag'])) {
