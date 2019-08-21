@@ -6,24 +6,27 @@ console.log('[Finder App] Start');
 const visitedWebsite = Cookies.get('visited-website');
 console.log('[Finder App] Cookie gesetzt:', visitedWebsite);
 
-$('.page-start').show();
+/**
+ * Variablen
+ */
+const activeClass = 'is-active';
 
 /**
  * Buttons
  */
  $('.btn-start').on('click', (event) => {
-   $('.page').hide();
-   $('.page-start').show();
+   $('.page').removeClass(activeClass);
+   $('.page-start').addClass(activeClass);
  });
 
 $('.btn-finder').on('click', (event) => {
-  $('.page').hide();
-  $('.page-finder').show();
+  $('.page').removeClass(activeClass);
+  $('.page-finder').addClass(activeClass);
 });
 
 $('.btn-bookmarks').on('click', (event) => {
-  $('.page').hide();
-  $('.page-bookmarks').show();
+  $('.page').removeClass(activeClass);
+  $('.page-bookmarks').addClass(activeClass);
 });
 
 /**

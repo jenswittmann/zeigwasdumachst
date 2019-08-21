@@ -1,4 +1,87 @@
-.page
-{
+:root {
+	--header-height: 30px;
+	--menu-height: 40px;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 1rem;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+  padding-top: var(--header-height);
+}
+
+.app-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 0;
+}
+
+.header-logo {
+	
+}
+
+.app-page {
+  width: 100%;
+  height: calc(100% - 120px);
+}
+
+.app-menu {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: var(--menu-height);
+  background-color: black;
+}
+
+.app-menu ul {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+.app-menu ul li{
+  width: 25%;
+  height: auto;
+  text-align: center;
+  color: white;
+}
+
+.page {
+  position: absolute;
+  left: 0;
+  bottom: var(--menu-height);
+  z-index: 2;
+  overflow: scroll;
   display: none;
+  height: calc(100vh - var(--header-height) - var(--menu-height));
+  background-color: white;
+  -webkit-overflow-scrolling: touch;
+}
+
+.page.is-active {
+	display: block;
 }
