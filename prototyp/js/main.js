@@ -40,8 +40,17 @@ $("#tinderslide").jTinder({
     },
 	// like callback
     onLike: function (item) {
-			const visitedWebsite = Cookies.set('like', '1');
-      console.log('[Finder App] Button »Like« geklickt');
+			const postId = item.data('post-id');
+			console.log(postId);
+			Cookies.set('like'+postId, postId);
+      console.log('[Finder App] Button »Like« geklickt',item);
+			const allcookies = Cookies.get();
+			console.log(allcookies);
+			$.each(allcookies, function(i, cookiedata) {
+				  console.log(i+': '+cookiedata);
+			});
+
+
 	    // set the status text
         $('#status').html('Like Post #' + (item.index()+1));
     },
