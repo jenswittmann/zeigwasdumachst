@@ -32,14 +32,22 @@ $('.btn-bookmarks').on('click', (event) => {
   $('.page-bookmarks').toggleClass(activeClass);
 	const allcookies = Cookies.get();
 	console.log(allcookies);
+	$('.bookmark-list').html('');
 	$.each(allcookies, function(i, cookiedata) {
 			console.log(i+': '+cookiedata);
 
 			const thisCookie = cookiedata.split('||');
 
-			$('.bookmark-list').append('<img src="'+thisCookie[0]+'"><p>'+thisCookie[1]+'</p>');
+			$('.bookmark-list').prepend('<div class="relative"><img src="'+thisCookie[1]+'">'+
+			'<button data-post-id="'+thisCookie[0]+'" class="absolute top-0 right-0 btn-remove">x</button><p>'+thisCookie[2]+'</p></div>');
 	});
 
+});
+
+$('.bookmark-list').on('click', '.btn-remove', function()  {
+	const postId= $(this).data('post-id');
+	Cookies.remove('like'+postId);
+	$(this).parent().remove();
 });
 
 /**
@@ -58,7 +66,7 @@ $("#tinderslide").jTinder({
 			const postImg = item.data('post-img');
 			const postContent = item.data('post-content');
 			console.log(postId);
-			Cookies.set('like'+postId, postImg+ '||'+postContent);
+			Cookies.set('like'+postId, postId+'||'+postImg+'||'+postContent);
       console.log('[Finder App] Button »Like« geklickt',item);
 
 
