@@ -28,6 +28,20 @@ $('.btn-share').on('click', (event) => {
   $('.page-share').toggleClass(activeClass);
 });
 
+$('.btn-bookmarks').on('click', (event) => {
+  $('.page-bookmarks').toggleClass(activeClass);
+	const allcookies = Cookies.get();
+	console.log(allcookies);
+	$.each(allcookies, function(i, cookiedata) {
+			console.log(i+': '+cookiedata);
+
+			const thisCookie = cookiedata.split('||');
+
+			$('.bookmark-list').append('<img src="'+thisCookie[0]+'"><p>'+thisCookie[1]+'</p>');
+	});
+
+});
+
 /**
  * jTinder initialization
  */
@@ -46,13 +60,7 @@ $("#tinderslide").jTinder({
 			console.log(postId);
 			Cookies.set('like'+postId, postImg+ '||'+postContent);
       console.log('[Finder App] Button »Like« geklickt',item);
-			const allcookies = Cookies.get();
-			console.log(allcookies);
-			$.each(allcookies, function(i, cookiedata) {
-				  console.log(i+': '+cookiedata);
 
-					console.log(cookiedata.split('||') );
-			});
 
 
 	    // set the status text
