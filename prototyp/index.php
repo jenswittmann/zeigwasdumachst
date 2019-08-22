@@ -87,6 +87,13 @@
 					</div>
 				</div>
 
+				<div class="page page-bookmarks">
+					<div class="pa1">
+						<h3>Bookmarks</h3>
+						<div class="bookmark-list"></div>
+					</div>
+				</div>
+
 		    </div>
 
 		    <nav class="app-menu" role="navigation">
@@ -94,9 +101,9 @@
 					<!--li class="btn-filter">
 						<img src="img/filter.svg" alt="">
 					</li-->
-					<!--li class="btn-bookmarks">
+					<li class="btn-bookmarks">
 						<img src="img/favorite.svg" alt="">
-					</li-->
+					</li>
 					<li class="btn-share">
 						<img src="img/share.svg" alt="">
 					</li>
