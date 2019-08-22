@@ -40,6 +40,7 @@ $("#tinderslide").jTinder({
     },
 	// like callback
     onLike: function (item) {
+			const visitedWebsite = Cookies.set('like', '1');
       console.log('[Finder App] Button »Like« geklickt');
 	    // set the status text
         $('#status').html('Like Post #' + (item.index()+1));
