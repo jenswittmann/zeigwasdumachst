@@ -7,11 +7,12 @@ const activeClass = 'is-active';
  * Cookie handling
  */
 const visitedWebsite = Cookies.get('visited-website');
-console.log('[Finder App] Cookie gesetzt:', visitedWebsite);
 
 if (visitedWebsite) {
 	$('.page-start').removeClass(activeClass);
 }
+
+Cookies.set('visited-website', 1);
 
 /**
  * Buttons

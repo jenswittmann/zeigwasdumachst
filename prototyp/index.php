@@ -16,7 +16,7 @@
 
 		    <div class="app-page">
 
-				<div class="finder">
+				<div class="finder pb5">
 		          	<div class="wrap">
 		              	<div id="tinderslide">
 		                  	<ul>
@@ -43,7 +43,7 @@
 				  								data-post-img="<?php echo $media->getImageHighResolutionUrl(); ?>"
 				  								data-post-content="<?php echo $media->getCaption(); ?>" class="pane1">
 				  								<img src="<?php echo $media->getImageHighResolutionUrl(); ?>" width="300" alt="">
-				  								<div><?php echo $media->getCaption(); ?></div>
+				  								<p class="f5 ma0"><?php echo $media->getCaption(); ?></p>
 				  								<div class="like"></div>
 				  								<div class="dislike"></div>
 				  							</li>
@@ -77,6 +77,13 @@
 					</div>
 				</div>
 
+				<div class="page page-bookmarks">
+					<div class="pa1">
+						<h3>Bookmarks</h3>
+						<div class="bookmark-list"></div>
+					</div>
+				</div>
+
 				<div class="page page-share page-half white center bg-black">
 					<div class="pa1">
 						<h3>Share</h3>
@@ -84,13 +91,6 @@
 							<li class="mb1"><a href="whatsapp://send?text=Teste%20die%20Findr%20APP%3A%20https%3A%2F%2Fprototyp.zeig-was-du-machst.de">WhatsApp</a></li>
 							<li><a href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fprototyp.zeig-was-du-machst.de" target="_blank">Facebook</a></li>
 						</ul>
-					</div>
-				</div>
-
-				<div class="page page-bookmarks">
-					<div class="pa1">
-						<h3>Bookmarks</h3>
-						<div class="bookmark-list"></div>
 					</div>
 				</div>
 
