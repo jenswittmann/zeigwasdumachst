@@ -6,7 +6,7 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
 	    <link rel="stylesheet" type="text/css" href="css/jTinder.css">
-	    <link rel="stylesheet" type="text/css" href="css/main.css">
+	    <link rel="stylesheet" type="text/css" href="css/main.css?v2">
 	</head>
 	<body>
 
@@ -119,7 +119,7 @@
 		<script type="text/javascript" src="js/jquery.transform2d.js"></script>
 		<script type="text/javascript" src="js/jquery.jTinder.js"></script>
 		<script type="text/javascript" src="js/js.cookie.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/main.js?v2"></script>
 
 	</body>
 </html>
