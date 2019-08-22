@@ -33,6 +33,9 @@ $('.btn-bookmarks').on('click', (event) => {
 	const allcookies = Cookies.get();
 	console.log(allcookies);
 	$('.bookmark-list').html('');
+	if(Object.keys(allcookies).length==0){
+		$('.bookmark-list').html('<p>es wurden keine posts vorgemerkt</p>')
+	}
 	$.each(allcookies, function(i, cookiedata) {
 			console.log(i+': '+cookiedata);
 
