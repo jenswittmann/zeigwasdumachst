@@ -41,13 +41,17 @@ $("#tinderslide").jTinder({
 	// like callback
     onLike: function (item) {
 			const postId = item.data('post-id');
+			const postImg = item.data('post-img');
+			const postContent = item.data('post-content');
 			console.log(postId);
-			Cookies.set('like'+postId, postId);
+			Cookies.set('like'+postId, postImg+ '||'+postContent);
       console.log('[Finder App] Button »Like« geklickt',item);
 			const allcookies = Cookies.get();
 			console.log(allcookies);
 			$.each(allcookies, function(i, cookiedata) {
 				  console.log(i+': '+cookiedata);
+
+					console.log(cookiedata.split('||') );
 			});
 
 
