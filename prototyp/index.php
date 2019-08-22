@@ -5,7 +5,7 @@
 	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
-	    <link rel="stylesheet" type="text/css" href="css/jTinder.css">
+	    <link rel="stylesheet" type="text/css" href="css/jTinder.css?v2">
 	    <link rel="stylesheet" type="text/css" href="css/main.css?v2">
 	</head>
 	<body>
