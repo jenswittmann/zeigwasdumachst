@@ -39,7 +39,7 @@
 				  					foreach($medias as $media) {
 				  						if (!isset($tagFilter) || (isset($tagFilter) && strpos($media->getCaption(), '#'.$tagFilter) !== false)) {
 				  						?>
-				  							<li class="pane1">
+				  							<li data-post-id="<?php echo $media->getId(); ?>" class="pane1">
 				  								<img src="<?php echo $media->getImageHighResolutionUrl(); ?>" width="300" alt="">
 				  								<div><?php echo $media->getCaption(); ?></div>
 				  								<div class="like"></div>
