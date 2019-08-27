@@ -66,15 +66,12 @@ $("#tinderslide").jTinder({
     },
 	// like callback
     onLike: function (item) {
-			const postId = item.data('post-id');
-			const postImg = item.data('post-img');
-			const postContent = item.data('post-content');
-			console.log(postId);
-			Cookies.set('like'+postId, postId+'||'+postImg+'||'+postContent);
-      console.log('[Finder App] Button »Like« geklickt',item);
-
-
-
+		const postId = item.data('post-id');
+		const postImg = item.data('post-img');
+		const postContent = item.data('post-content');
+		console.log(postId);
+		Cookies.set('like'+postId, postId+'||'+postImg+'||'+postContent);
+		console.log('[Finder App] Button »Like« geklickt',item);
 	    // set the status text
         $('#status').html('Like Post #' + (item.index()+1));
     },

@@ -12,12 +12,17 @@
 
 		<div class="app">
 
-		    <h2 class="app-header">Findr APP</h2>
+		    <h2 class="app-header f6 ttu normal tracked">Findr</h2>
 
 		    <div class="app-page">
 
+				<p class="fixed f6 tc pa3">
+					<span class="f2 db">🙌🏻</span>
+					Alles gematcht. Poste deine Tipps für Dessau-Roßlau auf Instagram mit dem Hashtag #dessaumatchen!
+				</p>
+
 				<div class="finder pb5">
-		          	<div class="wrap">
+		          	<div class="wrap ph2">
 		              	<div id="tinderslide">
 		                  	<ul>
 			                  	<?php
@@ -36,16 +41,15 @@
 				                    }
 
 				  					# alle posts in schleife ausgeben
-				  					foreach( array_reverse($medias) as $media) {
+				  					foreach( array_reverse($medias) as $i => $media) {
+					  					
 				  						if (!isset($tagFilter) || (isset($tagFilter) && strpos($media->getCaption(), '#'.$tagFilter) !== false)) {
 				  						?>
 				  							<li data-post-id="<?php echo $media->getId(); ?>"
 				  								data-post-img="<?php echo $media->getImageHighResolutionUrl(); ?>"
-				  								data-post-content="<?php echo $media->getCaption(); ?>" class="pane1">
+				  								data-post-content="<?php echo $media->getCaption(); ?>" class="pane<?php echo $i + 1; ?>">
 				  								<img src="<?php echo $media->getImageHighResolutionUrl(); ?>" width="300" alt="">
-				  								<p class="f5 ma0"><?php echo $media->getCaption(); ?></p>
-				  								<div class="like"></div>
-				  								<div class="dislike"></div>
+				  								<p class="f6 hyphens-auto ma0"><?php echo $media->getCaption(); ?></p>
 				  							</li>
 				  						<?php
 				  						}
@@ -57,10 +61,10 @@
 		              	</div>
 		          	</div>
 
-					<div class="actions">
+					<!--div class="actions">
 						<a href="#" class="dislike"><i></i></a>
 						<a href="#" class="like"><i></i></a>
-					</div>
+					</div-->
 
 		    	</div>
 
@@ -84,7 +88,7 @@
 					</div>
 				</div>
 
-				<div class="page page-share page-half white center bg-black">
+				<div class="page page-share page-half white center bg-dark">
 					<div class="pa1">
 						<h3>Share</h3>
 						<ul>
@@ -97,7 +101,7 @@
 		    </div>
 
 		    <nav class="app-menu" role="navigation">
-				<ul>
+				<ul class="mw5 ma0 center">
 					<!--li class="btn-filter">
 						<img src="img/filter.svg" alt="">
 					</li-->

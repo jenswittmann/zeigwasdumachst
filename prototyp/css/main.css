@@ -1,11 +1,19 @@
 :root {
+	--content-width: 30rem;
 	--header-height: 30px;
 	--menu-height: 40px;
+	--light-color: #fffbe7;
+	--dark-color: #f9d07c;
 }
 
 body {
   font-family: sans-serif;
   font-size: 1rem;
+  background-color: var(--light-color);
+}
+
+* {
+  -webkit-overflow-scrolling: touch;
 }
 
 h1 {
@@ -15,8 +23,11 @@ h1 {
 
 .app {
   width: 100%;
+  max-width: var(--content-width);
   height: 100%;
+  max-height: 40rem;
   padding-top: var(--header-height);
+  margin: auto;
 }
 
 .app-header {
@@ -37,6 +48,15 @@ h1 {
 	
 }
 
+#tinderslide li {
+	background-color: white;
+}
+
+#tinderslide img {
+  width: 100%;
+  height: auto;
+}
+
 .app-page {
   width: 100%;
   height: calc(100vh - var(--header-height) - var(--menu-height));
@@ -46,14 +66,14 @@ h1 {
   position: fixed;
   left: 0;
   bottom: 0;
+  z-index: 3;
   width: 100%;
   height: var(--menu-height);
-  background-color: black;
+  background-color: var(--dark-color);
 }
 
 .app-menu ul {
   padding: 0;
-  margin: 0;
   height: 100%;
   list-style: none;
   display: flex;
@@ -63,24 +83,29 @@ h1 {
   align-content: center;
 }
 
-.app-menu ul li{
+.app-menu ul li {
   width: 25%;
   height: auto;
   text-align: center;
   color: white;
 }
 
+.app-menu img {
+  height: 1rem;
+}
+
 .page {
   position: absolute;
-  left: 0;
+  left: 50%;
   bottom: var(--menu-height);
   z-index: 2;
   overflow: scroll;
   display: none;
   width: 100%;
+  max-width: var(--content-width);
   height: calc(100vh - var(--header-height) - var(--menu-height));
   background-color: white;
-  -webkit-overflow-scrolling: touch;
+  transform: translateX(-50%);
 }
 
 .page-half {
@@ -100,7 +125,7 @@ ul {
 button {
 	color: white;
 	padding: .5rem 2rem;
-	background-color: black;
+	background-color: var(--dark-color);
 	border: 0;
 }
 
@@ -121,6 +146,10 @@ a {
 	text-align: center;
 }
 
+.hyphens-auto {
+	hyphens: auto;
+}
+
 .pa1 {
 	padding: 1rem;
 }
@@ -129,6 +158,6 @@ a {
 	margin-bottom: 1rem;
 }
 
-.bg-black {
-	background-color: black;	
+.bg-dark {
+	background-color: var(--dark-color);	
 }

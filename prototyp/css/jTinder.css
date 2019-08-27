@@ -7,14 +7,12 @@ html, body {
 
 /* Wrapper with padding */
 .wrap  {
-    height: 500px;
-    padding: 20px;
+    height: 85vh;
 }
 
 #tinderslide {
     position: relative;
-    background: #fff;
-    width: 95%;
+    width: 100%;
     height: 100%;
 }
 
@@ -23,6 +21,7 @@ html, body {
     position: relative;
     display: block;
     height: 100%;
+    background-color: transparent;
 }
 
 #tinderslide li {
@@ -30,15 +29,12 @@ html, body {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    overflow-y: auto;
     position: absolute;
     top: 0;
     z-index: 2;
     left: 0;
-    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
-    overflow: hidden;
-    text-align: center;
     padding: 10px 10px 10px 10px;
-    background: #eee;
     font-size: 24px;
     color: #000;
     border: 1px solid #fff;
