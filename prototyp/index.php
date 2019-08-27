@@ -36,7 +36,7 @@
 				                    }
 
 				  					# alle posts in schleife ausgeben
-				  					foreach($medias as $media) {
+				  					foreach( array_reverse($medias) as $media) {
 				  						if (!isset($tagFilter) || (isset($tagFilter) && strpos($media->getCaption(), '#'.$tagFilter) !== false)) {
 				  						?>
 				  							<li data-post-id="<?php echo $media->getId(); ?>"
