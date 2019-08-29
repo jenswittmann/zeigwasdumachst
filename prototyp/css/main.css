@@ -54,7 +54,7 @@ h1 {
 	
 .app-page {
 	width: 100%;
-	height: calc(100vh - var(--header-height) - var(--menu-height));
+	height: calc(100% - var(--header-height) - var(--menu-height));
 }
 	
 .app-menu {
@@ -101,7 +101,7 @@ h1 {
 	overflow: scroll;
 	width: 100%;
 	max-width: var(--content-width);
-	height: calc(100vh - var(--menu-height));
+	height: calc(100% - var(--menu-height));
 	background-color: white;
 	transform: translateX(-50%);
 	transition: .5s;
