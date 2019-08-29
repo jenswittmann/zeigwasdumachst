@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	    <title>Findr APP</title>
+	    <title>Findr</title>
 	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="css/tachyons.css">
@@ -14,9 +14,9 @@
 
 		    <h2 class="app-header f6 ttu normal tracked">Findr</h2>
 
-		    <div class="app-page">
+		    <div class="relative app-page">
 
-				<p class="fixed f6 tc pa3">
+				<p class="absolute w-100 f6 tc pa4">
 					<span class="f2 db">🙌🏻</span>
 					Alles gematchted! Poste deine Tipps für Dessau-Roßlau auf Instagram mit dem Hashtag #dessaumatchen!
 				</p>
