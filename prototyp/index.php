@@ -87,7 +87,7 @@
 						<p>
 						<h3>Alles klar?</h3>
 						<p>
-							<a href="#!" data-open-wrapper="info" class="nav-toggle db tc ph1 pv2 bg-dark br2">loslegen</a>
+							<a href="#!" data-open-wrapper="info" class="nav-toggle db tc ph1 pv2 mb2 bg-dark br2">loslegen</a>
 							<a href="javascript:install()" class="db tc ph1 pv2 bg-dark br2">zum Startbildschirm hinzufügen</a>
 						</p>
 						<ul class="list f7 pa0 mt5">
@@ -173,10 +173,8 @@
 					console.log("[PWA Builder] active service worker found, no need to register");
 				} else {
 				// Register the service worker
-				navigator.serviceWorker
-					.register("js/pwabuilder-sw.js", {
-						scope: "./"
-					})
+					navigator.serviceWorker
+					.register("service-worker.js")
 					.then(function (reg) {
 						console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
 					});
