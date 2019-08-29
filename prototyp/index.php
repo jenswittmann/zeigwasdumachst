@@ -143,10 +143,28 @@
 		<script type="text/javascript" src="js/main.js?v3"></script>
 		
 		<script>
-			let deferredPrompt;
-			window.addEventListener('beforeinstallprompt', (e) => {
-				// Stash the event so it can be triggered later.
-				deferredPrompt = e;
+			var CACHE_NAME = 'my-site-cache-v1';
+			var urlsToCache = [
+			  '/',
+			  '/css/main.css',
+			  '/js/main.js'
+			];
+			
+			self.addEventListener('install', function(event) {
+			  // Perform install steps
+			  event.waitUntil(
+			    caches.open(CACHE_NAME)
+			      .then(function(cache) {
+			        console.log('Opened cache');
+			        return cache.addAll(urlsToCache);
+			      })
+			  );
+			});
+						window.addEventListener('beforeinstallprompt', (e) => {
+			  // Stash the event so it can be triggered later.
+			  deferredPrompt = e;
+			  // Update UI notify the user they can add to home screen
+			  showInstallPromotion();
 			});
 		</script>
 
