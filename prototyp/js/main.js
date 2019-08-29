@@ -57,12 +57,21 @@ $('.btn-favorite').on('click', function(e) {
 /**
  * jTinder initialization
  */
+const tinderslides = $('#tinderslide li').length;
+let tinderslidesMatched = 0;
+const tinderslidesCheck = function() {
+	tinderslidesMatched++;
+	if (tinderslidesMatched == tinderslides) {
+		$("#tinderslide").remove();
+	}
+};
 $("#tinderslide").jTinder({
 	// dislike callback
     onDislike: function (item) {
       console.log('[Finder App] Button »Dislike« geklickt');
 	    // set the status text
         $('#status').html('Dislike Post #' + (item.index()+1));
+        tinderslidesCheck();
     },
 	// like callback
     onLike: function (item) {
@@ -74,6 +83,7 @@ $("#tinderslide").jTinder({
 		console.log('[Finder App] Button »Like« geklickt',item);
 	    // set the status text
         $('#status').html('Like Post #' + (item.index()+1));
+        tinderslidesCheck();
     },
 	animationRevertSpeed: 200,
 	animationSpeed: 400,
