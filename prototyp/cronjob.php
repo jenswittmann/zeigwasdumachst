@@ -6,6 +6,7 @@ $emailPosts = [];
 $emailTo = 'hallo@zeigwasdumachst.de';
 $emailFrom = 'adam@zeigwasdumachst.de';
 $emailSubject = 'Neue Instagramposts';
+$blacklistUrl = 'https://prototyp.zeig-was-du-machst.de/blacklist.php?id=';
 	
 # bibilothek initalisieren
 use InstagramScraper\Exception\InstagramException;
@@ -39,7 +40,8 @@ if (count($medias) > 0) {
 			$emailPosts[] = '
 				<p style="max-width: 300px; border-bottom: 2px solid black;">
 					<img src="'.$thisPost['img'].'" width="100%">
-					'.$thisPost['text'].'
+					'.$thisPost['text'].'<br>
+					<a href="'.$blacklistUrl.$thisPost['id'].'">Post verbergen</a>
 				</p>
 			';
 			
