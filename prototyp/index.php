@@ -26,36 +26,34 @@
 		              	<div id="tinderslide">
 		                  	<ul>
 			                  	<?php
-			      				# bibilothek initalisieren
-			      				use InstagramScraper\Exception\InstagramException;
-			      				require __DIR__ . '/vendor/autoload.php';
-			      				$instagram = new \InstagramScraper\Instagram();
+													$allposts = json_decode(file_get_contents('instagram.json'), true );
 
-			      				# posts mit hashtag anfordern
-			      				$medias = $instagram->getMediasByTag('dessaumatchen', 25);
-			      				if (count($medias) > 0) {
 
-				                    # tag filter
-				                    if (isset($_GET['tag'])) {
-				                      $tagFilter = $_GET['tag'];
-				                    }
+													if (count($allposts) > 0) {
 
-				  					# alle posts in schleife ausgeben
-				  					foreach( array_reverse($medias) as $i => $media) {
-					  					
-				  						if (!isset($tagFilter) || (isset($tagFilter) && strpos($media->getCaption(), '#'.$tagFilter) !== false)) {
-				  						?>
-				  							<li data-post-id="<?php echo $media->getId(); ?>"
-				  								data-post-img="<?php echo $media->getImageHighResolutionUrl(); ?>"
-				  								data-post-content="<?php echo $media->getCaption(); ?>" class="pane<?php echo $i + 1; ?>">
-				  								<img src="<?php echo $media->getImageHighResolutionUrl(); ?>" width="300" alt="">
-				  								<p class="f6 hyphens-auto ma0"><?php echo $media->getCaption(); ?></p>
-				  							</li>
-				  						<?php
-				  						}
-				  					}
+														# tag filter
+														if (isset($_GET['tag'])) {
+															$tagFilter = $_GET['tag'];
+														}
 
-			  					}
+														# alle posts in schleife ausgeben
+
+														foreach( array_reverse($allposts) as $i => $post) {
+
+
+														if (!isset($tagFilter) || (isset($tagFilter) && strpos($post['text'], '#'.$tagFilter) !== false)) {
+												?>
+														<li data-post-id="<?php echo $post['id']; ?>"
+															data-post-img="<?php echo $post['img']; ?>"
+														data-post-content="<?php echo $post['text']; ?>" class="pane<?php echo $i + 1; ?>">
+														<img src="<?php echo $post['img']; ?>" width="300" alt="">
+														<p class="f6 hyphens-auto ma0"><?php echo $post['text']; ?></p>
+														</li>
+												<?php
+												}
+										}
+
+						}
 			          			?>
 		                  	</ul>
 		              	</div>
