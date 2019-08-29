@@ -37,7 +37,7 @@
 				                    }
 
 				  					# alle posts in schleife ausgeben
-				  					foreach( array_reverse($allPosts) as $i => $post) {
+				  					foreach( $allPosts as $i => $post) {
 					  					
 				  						if (!isset($tagFilter) || (isset($tagFilter) && strpos($post['text'], '#'.$tagFilter) !== false)) {
 				  						?>
