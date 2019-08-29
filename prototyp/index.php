@@ -68,32 +68,44 @@
 
 		    	</div>
 
-		      	<div class="page page-start is-active">
-					<div class="pa1">
+		      	<div class="page page-info shadow-1">
+					<div class="pa3">
+						<h3>Worum geht's?</h3>
 						<p>
-							Wir, vom Projekt „Zeig, was Du machst!”, arbeiten derzeit an einem Webportal für Dessau-Roßlau. Nach dem Tinder-Prinzip sollen algorithmusbasierte Empfehlungen für Aktivitäten und Veranstaltungen in der Stadt vorgeschlagen werden. Die Zielgruppe sind junge Menschen zwischen 12 und 27 Jahren. Die Anwendung nutzt Beiträge der Plattform Instagram, die mit dem Hashtag #dessaumatchen markiert sind. Wir würden uns freuen, wenn Interesse an einer Zusammenarbeit durch Verwendung des Hashtags besteht. Gerne können wir dann Weiteres klären.
+							Die Zielgruppe sind junge Menschen zwischen 12 und 27 Jahren. Die Anwendung nutzt Beiträge der Plattform Instagram, die mit dem Hashtag <strong class="bg-yellow">#dessaumatchen</strong> markiert sind. Wir würden uns freuen, wenn Interesse an einer Zusammenarbeit durch Verwendung des Hashtags besteht. Gerne können wir dann Weiteres klären.
 						<p>
-						<button class="btn-finder">Los geht's</button>
-						<ul class="small">
+						<h3>Wie funktioniert es?</h3>
+						<img src="img/swipe.gif" alt="Swipe Anleitung">
+						<h3>Wie kann ich mitmachen?</h3>
+						<p>
+							Wir, vom Projekt „Zeig, was Du machst!”, arbeiten derzeit an einem Webportal für Dessau-Roßlau. Nach dem Tinder-Prinzip sollen algorithmusbasierte Empfehlungen für Aktivitäten und Veranstaltungen in der Stadt vorgeschlagen werden.
+						<p>
+						<h3>Alles klar?</h3>
+						<p>
+							<a href="#!" data-open-wrapper="info" class="nav-toggle db tc ph1 pv2 bg-dark br2">loslegen</a>
+						</p>
+						<ul class="list f7 pa0 mt5">
 							<li><a href="https://vonderrolle.org/impressum.html" target="_blank" class="mb2 db">Impressum</a></li>
 							<li><a href="https://vonderrolle.org/datenschutzerklaerung.html" target="_blank">Datenschutzerklärung</a></li>
 						</ul>
 					</div>
 				</div>
 
-				<div class="page page-bookmarks">
-					<div class="pa1">
-						<h3>Bookmarks</h3>
-						<div class="bookmark-list"></div>
+				<div class="page page-favorite shadow-1">
+					<div class="pa3">
+						<div class="favorite-list"></div>
 					</div>
 				</div>
 
-				<div class="page page-share page-half white center bg-dark">
+				<div class="page page-share page-half shadow-1">
 					<div class="pa1">
-						<h3>Share</h3>
-						<ul>
-							<li class="mb1"><a href="whatsapp://send?text=Teste%20die%20Findr%20APP%3A%20https%3A%2F%2Fprototyp.zeig-was-du-machst.de">WhatsApp</a></li>
-							<li><a href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fprototyp.zeig-was-du-machst.de" target="_blank">Facebook</a></li>
+						<h3 class="tc">Teile uns!</h3>
+						<p class="tc">
+							Teile unsere APP mit deinen Freunden:
+						</p>
+						<ul class="list pa0">
+							<li class="mb3"><a href="whatsapp://send?text=Teste%20die%20Findr%20APP%3A%20https%3A%2F%2Fprototyp.zeig-was-du-machst.de" class="db tc ph1 pv2 bg-dark br2">WhatsApp</a></li>
+							<li><a href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fprototyp.zeig-was-du-machst.de" target="_blank" class="db tc ph1 pv2 bg-dark br2">Facebook</a></li>
 						</ul>
 					</div>
 				</div>
@@ -105,14 +117,14 @@
 					<!--li class="btn-filter">
 						<img src="img/filter.svg" alt="">
 					</li-->
-					<li class="btn-bookmarks">
-						<img src="img/favorite.svg" alt="">
+					<li data-open-wrapper="favorite" class="nav-toggle nav-favorite btn-favorite">
+						<?php echo file_get_contents('img/favorite.svg'); ?>
 					</li>
-					<li class="btn-share">
-						<img src="img/share.svg" alt="">
+					<li data-open-wrapper="share" class="nav-toggle nav-share">
+						<?php echo file_get_contents('img/share.svg'); ?>
 					</li>
-					<li class="btn-start">
-						<img src="img/info.svg" alt="">
+					<li data-open-wrapper="info" class="nav-toggle nav-info">
+						<?php echo file_get_contents('img/info.svg'); ?>
 					</li>
 				</ul>
 		    </nav>

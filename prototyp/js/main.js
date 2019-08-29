@@ -8,47 +8,42 @@ const activeClass = 'is-active';
  */
 const visitedWebsite = Cookies.get('visited-website');
 
-if (visitedWebsite) {
-	$('.page-start').removeClass(activeClass);
+if (!visitedWebsite) {
+	$('.page-info').addClass(activeClass);
+	$('.nav-info').addClass(activeClass);
 }
 
 Cookies.set('visited-website', 1);
 
 /**
- * Buttons
- */
- $('.btn-start').on('click', (event) => {
-   $('.page-start').toggleClass(activeClass);
- });
-
-$('.btn-finder').on('click', (event) => {
-  $('.page').removeClass(activeClass);
+ * Navigation
+ **/
+$('.nav-toggle').on('click', function(e) {
+	let pageId = $(this).data('open-wrapper');
+	$('.page, .nav-toggle').not('.page-'+pageId+', .nav-'+pageId).removeClass(activeClass);
+	$('.page-'+pageId).toggleClass(activeClass);
+	$('.nav-'+pageId).toggleClass(activeClass);
 });
 
-$('.btn-share').on('click', (event) => {
-  $('.page-share').toggleClass(activeClass);
-});
-
-$('.btn-bookmarks').on('click', (event) => {
-  $('.page-bookmarks').toggleClass(activeClass);
+/**
+ * Favorites
+ **/
+$('.btn-favorite').on('click', function(e) {
 	const allcookies = Cookies.get();
 	console.log(allcookies);
-	$('.bookmark-list').html('');
+	$('.favorite-list').html('');
 	if(Object.keys(allcookies).length==0){
-		$('.bookmark-list').html('<p>es wurden keine posts vorgemerkt</p>')
+		$('.favorite-list').html('<p>es wurden keine posts vorgemerkt</p>')
 	}
 	$.each(allcookies, function(i, cookiedata) {
-			console.log(i+': '+cookiedata);
-
-			const thisCookie = cookiedata.split('||');
-
-			$('.bookmark-list').prepend('<div class="relative"><img src="'+thisCookie[1]+'">'+
-			'<button data-post-id="'+thisCookie[0]+'" class="absolute top-0 right-0 btn-remove">x</button><p>'+thisCookie[2]+'</p></div>');
+		const thisCookie = cookiedata.split('||');
+		if (thisCookie.length == 3) {
+			$('.favorite-list').prepend('<div class="relative"><img src="'+thisCookie[1]+'">'+
+			'<button data-post-id="'+thisCookie[0]+'" class="btn-remove absolute top-0 right-0 db tc ph3 pv1 ma2 bg-dark bn br2">x</button><p class="f6 hyphens-auto pb4 mt0 mb4 bb b--silver">'+thisCookie[2]+'</p></div>');
+		}
 	});
-
 });
-
-$('.bookmark-list').on('click', '.btn-remove', function()  {
+$('.favorite-list').on('click', '.btn-remove', function()  {
 	const postId= $(this).data('post-id');
 	Cookies.remove('like'+postId);
 	$(this).parent().remove();
