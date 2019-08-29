@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="css/tachyons.css">
 	    <link rel="stylesheet" type="text/css" href="css/jTinder.css?v3">
 	    <link rel="stylesheet" type="text/css" href="css/main.css?v3">
+	    <link rel="manifest" href="manifest.json">
 	</head>
 	<body>
 
@@ -26,36 +27,32 @@
 		              	<div id="tinderslide">
 		                  	<ul>
 			                  	<?php
-			      				# bibilothek initalisieren
-			      				use InstagramScraper\Exception\InstagramException;
-			      				require __DIR__ . '/vendor/autoload.php';
-			      				$instagram = new \InstagramScraper\Instagram();
-
-			      				# posts mit hashtag anfordern
-			      				$medias = $instagram->getMediasByTag('dessaumatchen', 25);
-			      				if (count($medias) > 0) {
+			      				$allPosts = json_decode( file_get_contents('instagram.json'), true );
+			      				
+			      				if (count($allPosts) > 0) {
 
 				                    # tag filter
 				                    if (isset($_GET['tag'])) {
-				                      $tagFilter = $_GET['tag'];
+				                    	$tagFilter = $_GET['tag'];
 				                    }
 
 				  					# alle posts in schleife ausgeben
-				  					foreach( array_reverse($medias) as $i => $media) {
+				  					foreach( array_reverse($allPosts) as $i => $post) {
 					  					
-				  						if (!isset($tagFilter) || (isset($tagFilter) && strpos($media->getCaption(), '#'.$tagFilter) !== false)) {
+				  						if (!isset($tagFilter) || (isset($tagFilter) && strpos($post['text'], '#'.$tagFilter) !== false)) {
 				  						?>
-				  							<li data-post-id="<?php echo $media->getId(); ?>"
-				  								data-post-img="<?php echo $media->getImageHighResolutionUrl(); ?>"
-				  								data-post-content="<?php echo $media->getCaption(); ?>" class="pane<?php echo $i + 1; ?>">
-				  								<img src="<?php echo $media->getImageHighResolutionUrl(); ?>" width="300" alt="">
-				  								<p class="f6 hyphens-auto ma0"><?php echo $media->getCaption(); ?></p>
+				  							<li data-post-id="<?php echo $post['id']; ?>"
+				  								data-post-img="<?php echo $post['img']; ?>"
+				  								data-post-content="<?php echo $post['text']; ?>" class="pane<?php echo $i + 1; ?>">
+				  								<img src="<?php echo $post['img']; ?>" width="300" alt="">
+				  								<p class="f6 hyphens-auto ma0"><?php echo $post['text']; ?></p>
 				  							</li>
 				  						<?php
 				  						}
 				  					}
 
 			  					}
+			      				
 			          			?>
 		                  	</ul>
 		              	</div>
@@ -98,7 +95,7 @@
 				</div>
 
 				<div class="page page-share page-half shadow-1">
-					<div class="pa1">
+					<div class="pa3">
 						<h3 class="tc">Teile uns!</h3>
 						<p class="tc">
 							Teile unsere APP mit deinen Freunden:
@@ -117,13 +114,13 @@
 					<!--li class="btn-filter">
 						<img src="img/filter.svg" alt="">
 					</li-->
-					<li data-open-wrapper="favorite" class="nav-toggle nav-favorite btn-favorite">
+					<li data-open-wrapper="favorite" class="db nav-toggle nav-favorite btn-favorite">
 						<?php echo file_get_contents('img/favorite.svg'); ?>
 					</li>
-					<li data-open-wrapper="share" class="nav-toggle nav-share">
+					<li data-open-wrapper="share" class="db nav-toggle nav-share">
 						<?php echo file_get_contents('img/share.svg'); ?>
 					</li>
-					<li data-open-wrapper="info" class="nav-toggle nav-info">
+					<li data-open-wrapper="info" class="db nav-toggle nav-info">
 						<?php echo file_get_contents('img/info.svg'); ?>
 					</li>
 				</ul>
@@ -136,6 +133,14 @@
 		<script type="text/javascript" src="js/jquery.jTinder.js"></script>
 		<script type="text/javascript" src="js/js.cookie.js"></script>
 		<script type="text/javascript" src="js/main.js?v3"></script>
+		
+		<script>
+			let deferredPrompt;
+			window.addEventListener('beforeinstallprompt', (e) => {
+				// Stash the event so it can be triggered later.
+				deferredPrompt = e;
+			});
+		</script>
 
 	</body>
 </html>
