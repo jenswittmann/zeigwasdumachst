@@ -16,7 +16,8 @@ $instagram = new \InstagramScraper\Instagram();
 $medias = $instagram->getMediasByTag('dessaumatchen', 25);
 
 # aktuelle posts auslesen
-$lastPost = array_pop( json_decode( file_get_contents('instagram.json'), true ) );
+$lastPosts = json_decode( file_get_contents('instagram.json'), true );
+$lastPost = array_pop($lastPosts);
 $lastPostId = $lastPost['id'];
 
 if (count($medias) > 0) {
