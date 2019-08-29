@@ -18,7 +18,7 @@
 
 				<p class="fixed f6 tc pa3">
 					<span class="f2 db">🙌🏻</span>
-					Alles gematcht. Poste deine Tipps für Dessau-Roßlau auf Instagram mit dem Hashtag #dessaumatchen!
+					Alles gematchted! Poste deine Tipps für Dessau-Roßlau auf Instagram mit dem Hashtag #dessaumatchen!
 				</p>
 
 				<div class="finder pb5">
