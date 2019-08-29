@@ -1,6 +1,6 @@
 {
-  "short_name": "Maps",
-  "name": "Google Maps",
+  "short_name": "Findr",
+  "name": "#dessaumatchen",
   "icons": [
     {
       "src": "/img/icon.png",
@@ -8,8 +8,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/?source=pwa",
-  "background_color": "#3367D6",
-  "display": "standalone",
-  "theme_color": "#3367D6"
+  "start_url": "/",
+  "background_color": "#f9d07c",
+  "theme_color": "#f9d07c",
+  "display": "fullscreen"
 }

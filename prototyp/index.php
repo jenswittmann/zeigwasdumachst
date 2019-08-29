@@ -23,7 +23,7 @@
 				</p>
 
 				<div class="finder pb5">
-		          	<div class="wrap ph2">
+		          	<div class="wrap ph3">
 		              	<div id="tinderslide">
 		                  	<ul>
 			                  	<?php
@@ -88,6 +88,7 @@
 						<h3>Alles klar?</h3>
 						<p>
 							<a href="#!" data-open-wrapper="info" class="nav-toggle db tc ph1 pv2 bg-dark br2">loslegen</a>
+							<a href="javascript:install()" class="db tc ph1 pv2 bg-dark br2">zum Startbildschirm hinzufügen</a>
 						</p>
 						<ul class="list f7 pa0 mt5">
 							<li><a href="https://vonderrolle.org/impressum.html" target="_blank" class="mb2 db">Impressum</a></li>
@@ -143,29 +144,44 @@
 		<script type="text/javascript" src="js/main.js?v3"></script>
 		
 		<script>
-			var CACHE_NAME = 'my-site-cache-v1';
-			var urlsToCache = [
-			  '/',
-			  '/css/main.css',
-			  '/js/main.js'
-			];
-			
-			self.addEventListener('install', function(event) {
-			  // Perform install steps
-			  event.waitUntil(
-			    caches.open(CACHE_NAME)
-			      .then(function(cache) {
-			        console.log('Opened cache');
-			        return cache.addAll(urlsToCache);
-			      })
-			  );
+			let deferredPrompt = null;
+			window.addEventListener('beforeinstallprompt', (e) => {
+				// Prevent Chrome 67 and earlier from automatically showing the prompt
+				e.preventDefault();
+				// Stash the event so it can be triggered later.
+				deferredPrompt = e;
 			});
-						window.addEventListener('beforeinstallprompt', (e) => {
-			  // Stash the event so it can be triggered later.
-			  deferredPrompt = e;
-			  // Update UI notify the user they can add to home screen
-			  showInstallPromotion();
-			});
+			async function install() {
+				if (deferredPrompt) {
+					deferredPrompt.prompt();
+					console.log(deferredPrompt)
+					deferredPrompt.userChoice.then(function(choiceResult){
+						if (choiceResult.outcome === 'accepted') {
+							console.log('Your PWA has been installed');
+						} else {
+							console.log('User chose to not install your PWA');
+						}
+						deferredPrompt = null;
+					});
+				}
+			}
+			// This is the "Offline page" service worker
+			// Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
+			// Check compatibility for the browser we're running this in
+			if ("serviceWorker" in navigator) {
+				if (navigator.serviceWorker.controller) {
+					console.log("[PWA Builder] active service worker found, no need to register");
+				} else {
+				// Register the service worker
+				navigator.serviceWorker
+					.register("js/pwabuilder-sw.js", {
+						scope: "./"
+					})
+					.then(function (reg) {
+						console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+					});
+				}
+			}
 		</script>
 
 	</body>
