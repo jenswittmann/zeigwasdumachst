@@ -5,8 +5,8 @@
 	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="css/tachyons.css">
-	    <link rel="stylesheet" type="text/css" href="css/jTinder.css?v3">
-	    <link rel="stylesheet" type="text/css" href="css/main.css?v3">
+	    <link rel="stylesheet" type="text/css" href="css/jTinder.css?v4">
+	    <link rel="stylesheet" type="text/css" href="css/main.css?v4">
 	    <link rel="manifest" href="manifest.json">
 	</head>
 	<body>
@@ -142,7 +142,7 @@
 		<script type="text/javascript" src="js/jquery.transform2d.js"></script>
 		<script type="text/javascript" src="js/jquery.jTinder.js"></script>
 		<script type="text/javascript" src="js/js.cookie.js"></script>
-		<script type="text/javascript" src="js/main.js?v3"></script>
+		<script type="text/javascript" src="js/main.js?v4"></script>
 		
 		<script>
 			let deferredPrompt = null;
