@@ -17,7 +17,7 @@
 		    <div class="relative app-page">
 
 				<p class="absolute w-100 f6 tc pa4">
-					<span class="f2 db">🙌🏻</span>
+					<span class="f1 db">🙌🏻</span>
 					Alles gematchted! Poste deine Tipps für Dessau-Roßlau auf Instagram mit dem Hashtag #dessaumatchen!
 				</p>
 
