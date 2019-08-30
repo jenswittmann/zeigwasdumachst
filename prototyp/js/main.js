@@ -11,7 +11,7 @@ if (!visitedWebsite) {
 	$('.page-info').addClass(activeClass);
 	$('.nav-info').addClass(activeClass);
 }
-Cookies.set('visited-website', 1);
+Cookies.set('visited-website', 1, { expires: 365 });
 
 /**
  * Navigation
@@ -79,7 +79,7 @@ $("#tinderslide").jTinder({
 		const postImg = item.data('post-img');
 		const postContent = item.data('post-content');
 		console.log(postId);
-		Cookies.set('like'+postId, postId+'||'+postImg+'||'+postContent);
+		Cookies.set('like'+postId, postId+'||'+postImg+'||'+postContent, { expires: 365 });
 		console.log('[Finder App] Button »Like« geklickt',item);
 	    // set the status text
         $('#status').html('Like Post #' + (item.index()+1));
