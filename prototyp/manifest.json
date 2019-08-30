@@ -1,15 +1,16 @@
 {
-  "short_name": "Findr",
-  "name": "#dessaumatchen",
-  "icons": [
-    {
-      "src": "/img/icon.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": "/",
-  "background_color": "#f9d07c",
-  "theme_color": "#f9d07c",
-  "display": "fullscreen"
+	"short_name": "Findr",
+	"name": "#dessaumatchen",
+	"icons": [
+		{
+			"src": "/img/icon.png",
+			"type": "image/png",
+			"sizes": "512x512",
+			"purpose": "maskable"
+		}
+	],
+	"start_url": "/",
+	"background_color": "#f9d07c",
+	"theme_color": "#f9d07c",
+	"display": "fullscreen"
 }

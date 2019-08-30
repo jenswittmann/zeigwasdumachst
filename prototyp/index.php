@@ -8,6 +8,7 @@
 	    <link rel="stylesheet" type="text/css" href="css/jTinder.css?v4">
 	    <link rel="stylesheet" type="text/css" href="css/main.css?v4">
 	    <link rel="manifest" href="manifest.json">
+		<link rel="icon" href="img/favicon.png">
 	</head>
 	<body>
 
