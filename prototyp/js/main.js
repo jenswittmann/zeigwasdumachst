@@ -57,45 +57,45 @@ $('.btn-favorite').on('click', function(e) {
 /**
  * jTinder initialization
  */
-const tinderslides = $('#tinderslide li').length;
+let tinderslides = 0;
 let tinderslidesMatched = 0;
 const tinderslidesCheck = function() {
 	tinderslidesMatched++;
 	if (tinderslidesMatched == tinderslides) {
-		$("#tinderslide").remove();
+		$('#tinderslide').addClass('z-0');
 	}
 };
-$("#tinderslide").jTinder({
-	// dislike callback
-    onDislike: function (item) {
-      console.log('[Finder App] Button »Dislike« geklickt');
-	    // set the status text
-        $('#status').html('Dislike Post #' + (item.index()+1));
-        tinderslidesCheck();
-    },
-	// like callback
-    onLike: function (item) {
-		const postId = item.data('post-id');
-		const postImg = item.data('post-img');
-		const postContent = item.data('post-content');
-		console.log(postId);
-		Cookies.set('like'+postId, postId+'||'+postImg+'||'+postContent, { expires: 365 });
-		console.log('[Finder App] Button »Like« geklickt',item);
-	    // set the status text
-        $('#status').html('Like Post #' + (item.index()+1));
-        tinderslidesCheck();
-    },
-	animationRevertSpeed: 200,
-	animationSpeed: 400,
-	threshold: 1,
-	likeSelector: '.like',
-	dislikeSelector: '.dislike'
-});
-
-/**
- * Set button action to trigger jTinder like & dislike.
- */
-$('.actions .like, .actions .dislike').click(function(e){
-	e.preventDefault();
-	$("#tinderslide").jTinder($(this).attr('class'));
-});
+const tinderInit = function() {
+	$('#tinderslide').removeClass('z-0');
+	$.get('api.php', function(data) {
+		$('.tinder').html(data);
+		tinderslides = $('#tinderslide li').length;
+		$('#tinderslide').jTinder({
+			// dislike callback
+		    onDislike: function (item) {
+		      console.log('[Finder App] Button »Dislike« geklickt');
+			    // set the status text
+		        $('#status').html('Dislike Post #' + (item.index()+1));
+		        tinderslidesCheck();
+		    },
+			// like callback
+		    onLike: function (item) {
+				const postId = item.data('post-id');
+				const postImg = item.data('post-img');
+				const postContent = item.data('post-content');
+				console.log(postId);
+				Cookies.set('like'+postId, postId+'||'+postImg+'||'+postContent, { expires: 365 });
+				console.log('[Finder App] Button »Like« geklickt',item);
+			    // set the status text
+		        $('#status').html('Like Post #' + (item.index()+1));
+		        tinderslidesCheck();
+		    },
+			animationRevertSpeed: 200,
+			animationSpeed: 400,
+			threshold: 1,
+			likeSelector: '.like',
+			dislikeSelector: '.dislike'
+		});
+	});
+};
+tinderInit();

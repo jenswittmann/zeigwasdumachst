@@ -18,61 +18,14 @@
 
 		    <div class="relative app-page">
 
-				<p class="absolute w-100 f6 tc pa4">
+				<p class="absolute z-1 w-100 f6 tc pa4">
 					<span class="f1 db">🙌🏻</span>
 					Alles gematchted! Poste deine Tipps für Dessau-Roßlau auf Instagram mit dem Hashtag #dessaumatchen!
-					<a href="/" class="db tc ph1 pv2 mt2 bg-dark br2">Aktualisieren</a>
+					<a href="javascript:tinderInit()" class="db tc ph1 pv2 mt2 bg-dark br2">Aktualisieren</a>
 				</p>
 
 				<div class="finder pb5">
-		          	<div class="wrap ph3">
-		              	<div id="tinderslide">
-		                  	<ul>
-			                  	<?php
-			      				$allPosts = json_decode( file_get_contents('instagram.json'), true );
-			      				
-			      				if (count($allPosts) > 0) {
-
-				                    # tag filter
-				                    if (isset($_GET['tag'])) {
-				                    	$tagFilter = $_GET['tag'];
-				                    }
-
-				  					# alle posts in schleife ausgeben
-				  					foreach( $allPosts as $i => $post) {
-					  					
-					  					# blacklist holen
-					  					$blacklist = json_decode( file_get_contents('blacklist.json'), true );
-					  					
-					  					if ( !in_array($post['id'], $blacklist) ) {
-					  					
-					  						if (!isset($tagFilter) || (isset($tagFilter) && strpos($post['text'], '#'.$tagFilter) !== false)) {
-					  						?>
-					  							<li data-post-id="<?php echo $post['id']; ?>"
-					  								data-post-img="<?php echo $post['img']; ?>"
-					  								data-post-content="<?php echo $post['text']; ?>" class="pane<?php echo $i + 1; ?>">
-					  								<img src="<?php echo $post['img']; ?>" width="300" alt="">
-					  								<p class="f6 hyphens-auto ma0"><?php echo $post['text']; ?></p>
-					  							</li>
-					  						<?php
-					  						}
-					  						
-					  					}
-					  					
-				  					}
-
-			  					}
-			      				
-			          			?>
-		                  	</ul>
-		              	</div>
-		          	</div>
-
-					<!--div class="actions">
-						<a href="#" class="dislike"><i></i></a>
-						<a href="#" class="like"><i></i></a>
-					</div-->
-
+		          	<div class="tinder wrap ph3"></div>
 		    	</div>
 
 		      	<div class="page page-info shadow-1">
@@ -90,7 +43,9 @@
 						<h3>Alles klar?</h3>
 						<p>
 							<a href="#!" data-open-wrapper="info" class="nav-toggle db tc ph1 pv2 mb2 bg-dark br2">loslegen</a>
-							<a href="javascript:install()" class="db tc ph1 pv2 bg-dark br2">zum Startbildschirm hinzufügen</a>
+							<a href="javascript:install()" class="db tc ph1 pv2 mb2 bg-dark br2">zum Startbildschirm hinzufügen</a>
+							<a href="javascript:requestPermission()" class="db tc ph1 pv2 mb2 bg-dark br2">Push Nachrichten aktivieren</a>
+							<span class="f7">Push Nachrichten aktiviert: <span id="pushstatus">unavailable</span></span>
 						</p>
 						<ul class="list f7 pa0 mt5">
 							<li><a href="https://vonderrolle.org/impressum.html" target="_blank" class="mb2 db">Impressum</a></li>
@@ -182,6 +137,42 @@
 					});
 				}
 			}
+			
+			var $status = document.getElementById('pushstatus');
+
+			if ('Notification' in window) {
+			  $status.innerText = Notification.permission;
+			}
+			
+			function requestPermission() {
+			  if (!('Notification' in window)) {
+			    alert('Notification API not supported!');
+			    return;
+			  }
+			  
+			  Notification.requestPermission(function (result) {
+			    $status.innerText = result;
+			    if (result == 'granted') {
+				    persistentNotification();
+			    }
+			  });
+			}
+			
+			function persistentNotification() {
+			  if (!('Notification' in window) || !('ServiceWorkerRegistration' in window)) {
+			    alert('Persistent Notification API not supported!');
+			    return;
+			  }
+			  
+			  try {
+			    navigator.serviceWorker.getRegistration()
+			      .then(reg => reg.showNotification('Aktiviert!'))
+			      .catch(err => alert('Service Worker registration error: ' + err));
+			  } catch (err) {
+			    alert('Notification API error: ' + err);
+			  }
+			}
+			
 		</script>
 
 	</body>
