@@ -80,7 +80,7 @@
 		},
 
 		handler: function (ev) {
-			ev.preventDefault();
+			/*ev.preventDefault();*/
 
 			switch (ev.type) {
 				case 'touchstart':
