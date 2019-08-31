@@ -36,7 +36,7 @@ $('.nav-toggle').on('click', function(e) {
 			favorites.push(thisCookie);
 		}
 	});
-	if (favorites.length==0) {
+	if (favorites.length == 0) {
 		$('.favorite-list').html('<p class="f6 tc"><span class="f1 db">🤲</span> Du hast gerade keine Favoriten. Swipe in den Beiträgen nach rechts, um sie zu speichern.</p>')
 	} else {
 		$.each(favorites, function(i, cookiedata) {
@@ -75,6 +75,7 @@ const tinderInit = function() {
 	$.get('api.php', function(data) {
 		$('.tinder').html(data);
 		tinderslides = $('#tinderslide li').length;
+		tinderslidesMatched = 0;
 		$('#tinderslide').jTinder({
 			// dislike callback
 		    onDislike: function (item) {
