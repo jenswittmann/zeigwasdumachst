@@ -125,6 +125,7 @@ $(window).focus(function(e) {
  * Prüfen auf neue Posts
  **/
 setInterval(function() {
+	console.log('TEST');
 	if (('Notification' in window) || ('ServiceWorkerRegistration' in window)) {
 		$.get('api.php', function(data) {
 			let latestPostId = parseInt( $(data).find('li').last().data('post-id') ),
@@ -133,7 +134,7 @@ setInterval(function() {
 				try {
 					navigator.serviceWorker.getRegistration()
 					  .then(reg => reg.showNotification('Neue Posts 🔥'))
-					  .catch(err => alert('Service Worker registration error: ' + err));
+					  .catch(err => console.log('Service Worker registration error: ' + err));
 				} catch (err) {
 					console.log('Notification API error: ' + err);
 				}

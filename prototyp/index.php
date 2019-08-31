@@ -111,7 +111,6 @@
 		<script type="text/javascript" src="js/jquery.transform2d.js"></script>
 		<script type="text/javascript" src="js/jquery.jTinder.js?<?php echo md5_file('js/jquery.jTinder.js'); ?>"></script>
 		<script type="text/javascript" src="js/js.cookie.js"></script>
-		<script type="text/javascript" src="js/main.js?<?php echo md5_file('js/main.js'); ?>"></script>
 
 		<script>
 			let deferredPrompt = null;
@@ -182,6 +181,8 @@
 			}
 
 		</script>
+		
+		<script type="text/javascript" src="js/main.js?<?php echo md5_file('js/main.js'); ?>"></script>
 
 	</body>
 </html>
