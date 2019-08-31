@@ -115,7 +115,29 @@ $(window).blur(function(e) {
 });
 $(window).focus(function(e) {
 	if (userActive == false) {
+		console.log('Besucher wieder da');
     	tinderInit();
 		userActive = true;
 	}
 });
+
+/**
+ * Prüfen auf neue Posts
+ **/
+setInterval(function() {
+	if (('Notification' in window) || ('ServiceWorkerRegistration' in window)) {
+		$.get('api.php', function(data) {
+			let latestPostId = $(data).find('#tinderslide li').last().data('post-id'),
+				lastSwipedPostId = Cookies.get('lastSwipedPostId');
+			if (latestPostId > lastSwipedPostId || lastSwipedPostId == undefined) {			
+				try {
+					navigator.serviceWorker.getRegistration()
+					  .then(reg => reg.showNotification('Neue Posts 🔥'))
+					  .catch(err => alert('Service Worker registration error: ' + err));
+				} catch (err) {
+					console.log('Notification API error: ' + err);
+				}
+			}
+		});
+	}	
+}, 60000);
