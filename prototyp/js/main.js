@@ -37,7 +37,7 @@ $('.nav-toggle').on('click', function(e) {
 		}
 	});
 	if (favorites.length==0) {
-		$('.favorite-list').html('<p class="f6 tc"><span class="f1 db">🤲 </span> Du hast gerade keine Favoriten. Swipe in den Beiträgen nach rechts, um sie zu speichern.</p>')
+		$('.favorite-list').html('<p class="f6 tc"><span class="f1 db">🤲</span> Du hast gerade keine Favoriten. Swipe in den Beiträgen nach rechts, um sie zu speichern.</p>')
 	} else {
 		$.each(favorites, function(i, cookiedata) {
 			$('.favorite-list').prepend('<div class="relative"><img src="'+cookiedata[1]+'">'+
@@ -59,8 +59,13 @@ $('.btn-favorite').on('click', function(e) {
  */
 let tinderslides = 0;
 let tinderslidesMatched = 0;
-const tinderslidesCheck = function() {
+const tinderslidesCheck = function(item) {
 	tinderslidesMatched++;
+	let lastSwipedPostId = Cookies.get('lastSwipedPostId'),
+		thisPostId = item.data('post-id');
+	if (thisPostId > lastSwipedPostId || lastSwipedPostId == undefined) {
+		Cookies.set('lastSwipedPostId', thisPostId, { expires: 365 });
+	}
 	if (tinderslidesMatched == tinderslides) {
 		$('#tinderslide').addClass('z-0');
 	}
@@ -76,7 +81,7 @@ const tinderInit = function() {
 		      console.log('[Finder App] Button »Dislike« geklickt');
 			    // set the status text
 		        $('#status').html('Dislike Post #' + (item.index()+1));
-		        tinderslidesCheck();
+		        tinderslidesCheck(item);
 		    },
 			// like callback
 		    onLike: function (item) {
@@ -88,7 +93,7 @@ const tinderInit = function() {
 				console.log('[Finder App] Button »Like« geklickt',item);
 			    // set the status text
 		        $('#status').html('Like Post #' + (item.index()+1));
-		        tinderslidesCheck();
+		        tinderslidesCheck(item);
 		    },
 			animationRevertSpeed: 200,
 			animationSpeed: 400,
