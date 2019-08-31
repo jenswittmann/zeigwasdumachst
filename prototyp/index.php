@@ -47,6 +47,13 @@
 							<a href="javascript:requestPermission()" class="db tc ph1 pv2 mb2 bg-dark br2">Push Nachrichten aktivieren</a>
 							<span class="f7">Push Nachrichten aktiviert: <span id="pushstatus">unavailable</span></span>
 						</p>
+
+						<h3>Wie sollte ich Posts in die App stellen?</h3>
+						<p>
+							Das wichtigste ist, dass in dem Post der Hashtag dessaumatchen vorkommt. Als nächstes wäre es gut, wenn sowohl Titel als auch Datum ganz oben stehen würde, damit wir den Post besser auslesen können.
+							
+						<p>
+
 						<ul class="list f7 pa0 mt5">
 							<li><a href="https://vonderrolle.org/impressum.html" target="_blank" class="mb2 db">Impressum</a></li>
 							<li><a href="https://vonderrolle.org/datenschutzerklaerung.html" target="_blank">Datenschutzerklärung</a></li>
@@ -99,7 +106,7 @@
 		<script type="text/javascript" src="js/jquery.jTinder.js"></script>
 		<script type="text/javascript" src="js/js.cookie.js"></script>
 		<script type="text/javascript" src="js/main.js?<?php echo md5_file('js/main.js'); ?>"></script>
-		
+
 		<script>
 			let deferredPrompt = null;
 			window.addEventListener('beforeinstallprompt', (e) => {
@@ -137,19 +144,19 @@
 					});
 				}
 			}
-			
+
 			var $status = document.getElementById('pushstatus');
 
 			if ('Notification' in window) {
 			  $status.innerText = Notification.permission;
 			}
-			
+
 			function requestPermission() {
 			  if (!('Notification' in window)) {
 			    alert('Notification API not supported!');
 			    return;
 			  }
-			  
+
 			  Notification.requestPermission(function (result) {
 			    $status.innerText = result;
 			    if (result == 'granted') {
@@ -157,13 +164,13 @@
 			    }
 			  });
 			}
-			
+
 			function persistentNotification(msg) {
 			  if (!('Notification' in window) || !('ServiceWorkerRegistration' in window)) {
 			    alert('Persistent Notification API not supported!');
 			    return;
 			  }
-			  
+
 			  try {
 			    navigator.serviceWorker.getRegistration()
 			      .then(reg => reg.showNotification(msg))
@@ -172,7 +179,7 @@
 			    alert('Notification API error: ' + err);
 			  }
 			}
-			
+
 		</script>
 
 	</body>
