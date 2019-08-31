@@ -130,11 +130,12 @@ setInterval(function() {
 }, 5000);
 
 setInterval(function() {
-	console.log('TEST');
+	console.log('Prüfen auf neue Posts');
 	if (('Notification' in window) || ('ServiceWorkerRegistration' in window)) {
 		$.get('api.php', function(data) {
 			let latestPostId = parseInt( $(data).find('li').last().data('post-id') ),
 				lastSwipedPostId = Cookies.get('lastSwipedPostId');
+			console.log(latestPostId+' > '+lastSwipedPostId);
 			if (latestPostId > lastSwipedPostId) {		
 				try {
 					navigator.serviceWorker.getRegistration()
