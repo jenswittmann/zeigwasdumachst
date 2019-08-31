@@ -62,7 +62,7 @@ let tinderslidesMatched = 0;
 const tinderslidesCheck = function(item) {
 	tinderslidesMatched++;
 	let lastSwipedPostId = Cookies.get('lastSwipedPostId'),
-		thisPostId = item.data('post-id');
+		thisPostId = parseInt( item.data('post-id') );
 	if (thisPostId > lastSwipedPostId || lastSwipedPostId == undefined) {
 		Cookies.set('lastSwipedPostId', thisPostId, { expires: 365 });
 	}
@@ -127,9 +127,9 @@ $(window).focus(function(e) {
 setInterval(function() {
 	if (('Notification' in window) || ('ServiceWorkerRegistration' in window)) {
 		$.get('api.php', function(data) {
-			let latestPostId = $(data).find('#tinderslide li').last().data('post-id'),
+			let latestPostId = parseInt( $(data).find('li').last().data('post-id') ),
 				lastSwipedPostId = Cookies.get('lastSwipedPostId');
-			if (latestPostId > lastSwipedPostId || lastSwipedPostId == undefined) {			
+			if (latestPostId > lastSwipedPostId) {		
 				try {
 					navigator.serviceWorker.getRegistration()
 					  .then(reg => reg.showNotification('Neue Posts 🔥'))
@@ -140,4 +140,4 @@ setInterval(function() {
 			}
 		});
 	}	
-}, 60000);
+}, 4000);
