@@ -26,11 +26,20 @@ if (count($medias) > 0) {
 	# alle posts in schleife ausgeben
 	foreach( array_reverse($medias) as $i => $media) {
 		
+		$caption = $media->getCaption();
+		
+		# urls in beschreibung verlinken
+		$regexUrl = '/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/';
+
+		if (preg_match($regexUrl, $caption, $url)) {
+			$caption = preg_replace($regexUrl, '<a href="'.$url[0].'" target="_blank">'.$url[0].'</a> ', $caption);
+		}
+		
 		# daten für datei
 		$thisPost = [
 			'id' => $media->getId(),
 			'img' => $media->getImageHighResolutionUrl(),
-			'text' => $media->getCaption()
+			'text' => $caption
 		];	
 		$allPosts[] = $thisPost;
 		

@@ -173,10 +173,6 @@
 			  }
 			}
 			
-			setTimeout(function() {
-				persistentNotification('Nachricht von Findr: 1 Minute ist rum!');
-			}, 60000);
-			
 		</script>
 
 	</body>
