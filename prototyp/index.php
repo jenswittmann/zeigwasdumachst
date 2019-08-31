@@ -153,12 +153,12 @@
 			  Notification.requestPermission(function (result) {
 			    $status.innerText = result;
 			    if (result == 'granted') {
-				    persistentNotification();
+				    persistentNotification('Push Nachrichten sind aktiviert!');
 			    }
 			  });
 			}
 			
-			function persistentNotification() {
+			function persistentNotification(msg) {
 			  if (!('Notification' in window) || !('ServiceWorkerRegistration' in window)) {
 			    alert('Persistent Notification API not supported!');
 			    return;
@@ -166,12 +166,16 @@
 			  
 			  try {
 			    navigator.serviceWorker.getRegistration()
-			      .then(reg => reg.showNotification('Aktiviert!'))
+			      .then(reg => reg.showNotification(msg))
 			      .catch(err => alert('Service Worker registration error: ' + err));
 			  } catch (err) {
 			    alert('Notification API error: ' + err);
 			  }
 			}
+			
+			setTimeout(function() {
+				persistentNotification('Nachricht von Findr: 1 Minute ist rum!');
+			}, 60000);
 			
 		</script>
 
