@@ -5,8 +5,8 @@
 	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="css/tachyons.css">
-	    <link rel="stylesheet" type="text/css" href="css/jTinder.css?v5">
-	    <link rel="stylesheet" type="text/css" href="css/main.css?v5">
+	    <link rel="stylesheet" type="text/css" href="css/jTinder.css?<?php echo md5_file('css/jTinder.css'); ?>">
+	    <link rel="stylesheet" type="text/css" href="css/main.css?<?php echo md5_file('css/main.css'); ?>">
 	    <link rel="manifest" href="manifest.json">
 		<link rel="icon" href="img/favicon.png">
 	</head>
@@ -98,7 +98,7 @@
 		<script type="text/javascript" src="js/jquery.transform2d.js"></script>
 		<script type="text/javascript" src="js/jquery.jTinder.js"></script>
 		<script type="text/javascript" src="js/js.cookie.js"></script>
-		<script type="text/javascript" src="js/main.js?v5"></script>
+		<script type="text/javascript" src="js/main.js?<?php echo md5_file('js/main.js'); ?>"></script>
 		
 		<script>
 			let deferredPrompt = null;
