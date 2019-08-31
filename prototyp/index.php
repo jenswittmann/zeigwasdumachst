@@ -30,17 +30,26 @@
 
 		      	<div class="page page-info shadow-1">
 					<div class="pa3">
-						<h3>Worum geht's?</h3>
-						<p>
-							Die Zielgruppe sind junge Menschen zwischen 12 und 27 Jahren. Die Anwendung nutzt Beiträge der Plattform Instagram, die mit dem Hashtag <strong class="bg-yellow">#dessaumatchen</strong> markiert sind. Wir würden uns freuen, wenn Interesse an einer Zusammenarbeit durch Verwendung des Hashtags besteht. Gerne können wir dann Weiteres klären.
-						<p>
-						<h3>Wie funktioniert es?</h3>
+
+						<h3 class="f4 b">Wie funktioniert es?</h3>
 						<img src="img/swipe.gif" alt="Swipe Anleitung">
-						<h3>Wie kann ich mitmachen?</h3>
-						<p>
-							Wir, vom Projekt „Zeig, was Du machst!”, arbeiten derzeit an einem Webportal für Dessau-Roßlau. Nach dem Tinder-Prinzip sollen algorithmusbasierte Empfehlungen für Aktivitäten und Veranstaltungen in der Stadt vorgeschlagen werden.
-						<p>
-						<h3>Alles klar?</h3>
+						<details>
+							<summary class="f4 b">Worum geht's?</summary>
+							<p>
+							Die Zielgruppe sind junge Menschen zwischen 12 und 27 Jahren. Die Anwendung nutzt Beiträge der Plattform Instagram, die mit dem Hashtag <strong class="bg-yellow">#dessaumatchen</strong> markiert sind. Wir würden uns freuen, wenn Interesse an einer Zusammenarbeit durch Verwendung des Hashtags besteht. Gerne können wir dann Weiteres klären.
+						</details><p>
+							<details>
+								<summary class="f4 b">Wie kann ich mitmachen?</summary>
+								<p>
+								Wir, vom Projekt „Zeig, was Du machst!”, arbeiten derzeit an einem Webportal für Dessau-Roßlau. Nach dem Tinder-Prinzip sollen algorithmusbasierte Empfehlungen für Aktivitäten und Veranstaltungen in der Stadt vorgeschlagen werden.
+							</details><p>
+								<details>
+									<summary class="f4 b">Wie sollte ich Posts in die App stellen?</summary>
+									<p>
+									Das wichtigste ist, dass in dem Post der Hashtag dessaumatchen vorkommt. Als nächstes wäre es gut, wenn sowohl Titel als auch Datum ganz oben stehen würde, damit wir den Post besser auslesen können.
+									<img src="img/Beispielpost.png" style="margin-top: 10px;border:1px solid black" alt="Beispielpost">
+								</details><p>
+						<h3 class="f4 b">Alles klar?</h3>
 						<p>
 							<a href="#!" data-open-wrapper="info" class="nav-toggle db tc ph1 pv2 mb2 bg-dark br2">loslegen</a>
 							<a href="javascript:install()" class="db tc ph1 pv2 mb2 bg-dark br2">zum Startbildschirm hinzufügen</a>
@@ -48,11 +57,8 @@
 							<span class="f7">Push Nachrichten aktiviert: <span id="pushstatus">unavailable</span></span>
 						</p>
 
-						<h3>Wie sollte ich Posts in die App stellen?</h3>
-						<p>
-							Das wichtigste ist, dass in dem Post der Hashtag dessaumatchen vorkommt. Als nächstes wäre es gut, wenn sowohl Titel als auch Datum ganz oben stehen würde, damit wir den Post besser auslesen können.
-							
-						<p>
+
+
 
 						<ul class="list f7 pa0 mt5">
 							<li><a href="https://vonderrolle.org/impressum.html" target="_blank" class="mb2 db">Impressum</a></li>
