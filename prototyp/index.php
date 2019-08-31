@@ -34,7 +34,7 @@
 						<h3 class="f4 b">Wie funktioniert es?</h3>
 						<img src="img/swipe.gif" alt="Swipe Anleitung">
 						<details>
-							<summary class="f4 b">Worum geht's?</summary>
+							<summary class="f4 b" style="margin-top: 10px">Worum geht's?</summary>
 							<p>
 							Die Zielgruppe sind junge Menschen zwischen 12 und 27 Jahren. Die Anwendung nutzt Beiträge der Plattform Instagram, die mit dem Hashtag <strong class="bg-yellow">#dessaumatchen</strong> markiert sind. Wir würden uns freuen, wenn Interesse an einer Zusammenarbeit durch Verwendung des Hashtags besteht. Gerne können wir dann Weiteres klären.
 						</details><p>
@@ -46,7 +46,7 @@
 								<details>
 									<summary class="f4 b">Wie sollte ich Posts in die App stellen?</summary>
 									<p>
-									Das wichtigste ist, dass in dem Post der Hashtag dessaumatchen vorkommt. Als nächstes wäre es gut, wenn sowohl Titel als auch Datum ganz oben stehen würde, damit wir den Post besser auslesen können.
+									Das wichtigste ist, dass in dem Post der Hashtag <strong class="bg-yellow">#dessaumatchen</strong> vorkommt. Als nächstes wäre es gut, wenn sowohl Titel als auch Datum ganz oben stehen würde, damit wir den Post besser auslesen können.
 									<img src="img/Beispielpost.png" style="margin-top: 10px;border:1px solid black" alt="Beispielpost">
 								</details><p>
 						<h3 class="f4 b">Alles klar?</h3>
