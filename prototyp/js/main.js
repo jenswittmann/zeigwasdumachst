@@ -124,6 +124,11 @@ $(window).focus(function(e) {
 /**
  * Prüfen auf neue Posts
  **/
+
+setInterval(function() {
+	console.log('APP noch aktiv');
+}, 5000);
+
 setInterval(function() {
 	console.log('TEST');
 	if (('Notification' in window) || ('ServiceWorkerRegistration' in window)) {
