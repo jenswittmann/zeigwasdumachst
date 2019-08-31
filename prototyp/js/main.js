@@ -104,3 +104,17 @@ const tinderInit = function() {
 	});
 };
 tinderInit();
+
+/**
+ * Neue Posts holen wenn PWA neu geöffnet wird
+ */
+let userActive = true;
+$(window).blur(function(e) {
+    userActive = false;
+});
+$(window).focus(function(e) {
+	if (userActive == false) {
+    	tinderInit();
+		userActive = true;
+	}
+});
