@@ -109,7 +109,7 @@
 
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery.transform2d.js"></script>
-		<script type="text/javascript" src="js/jquery.jTinder.js"></script>
+		<script type="text/javascript" src="js/jquery.jTinder.js?<?php echo md5_file('js/jquery.jTinder.js'); ?>"></script>
 		<script type="text/javascript" src="js/js.cookie.js"></script>
 		<script type="text/javascript" src="js/main.js?<?php echo md5_file('js/main.js'); ?>"></script>
 
@@ -159,7 +159,7 @@
 
 			function requestPermission() {
 			  if (!('Notification' in window)) {
-			    alert('Notification API not supported!');
+			    /* alert('Notification API not supported!'); */
 			    return;
 			  }
 
@@ -173,16 +173,16 @@
 
 			function persistentNotification(msg) {
 			  if (!('Notification' in window) || !('ServiceWorkerRegistration' in window)) {
-			    alert('Persistent Notification API not supported!');
+			    /* alert('Persistent Notification API not supported!'); */
 			    return;
 			  }
 
 			  try {
 			    navigator.serviceWorker.getRegistration()
 			      .then(reg => reg.showNotification(msg))
-			      .catch(err => alert('Service Worker registration error: ' + err));
+			      .catch(err => /* alert('Service Worker registration error: ' + err) */ );
 			  } catch (err) {
-			    alert('Notification API error: ' + err);
+			    /* alert('Notification API error: ' + err); */
 			  }
 			}
 
