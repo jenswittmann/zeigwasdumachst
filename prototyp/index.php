@@ -21,8 +21,7 @@
 				<p class="absolute z-1 w-100 f6 tc pa4">
 					<span class="f1 db">🙌🏻</span>
 					Alles gematchted! Poste deine Tipps für Dessau-Roßlau auf Instagram mit dem Hashtag #dessaumatchen!
-					<!--a href="javascript:tinderInit()" class="db tc ph1 pv2 mt2 bg-dark br2">Aktualisieren</a-->
-					<img src="img/findr-qr.svg" alt="Findr QR Code">
+					<a href="javascript:tinderInit()" class="db tc ph1 pv2 mt2 bg-dark br2">Aktualisieren</a>
 				</p>
 
 				<div class="finder pb5">
