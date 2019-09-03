@@ -31,6 +31,16 @@
 		      	<div class="page page-info shadow-1">
 					<div class="pa3">
 
+
+						Worum geht's?
+Nach dem Tinder-Prinzip werden dir Instagram-Posts für Aktivitäten und Veranstaltungen in Dessau-Roßlau vorgeschlagen. Durch einen swipe nach rechts, kannst du dir Posts merken.
+
+Wie sollte ich Posts in die App stellen?
+Das wichtigste ist, dass in dem Post der Hashtag #dessaumatchen vorkommt. Als nächstes wäre es gut, wenn sowohl Titel als auch Datum ganz oben stehen würden, damit wir den Post in unserer App besser auslesen können.
+
+Wie kann ich an der App mitarbeiten?
+Wir geben im Aktionsladen „Zeig, was Du machst!” Programmier-Workshops. Unser Code ist öffentlich auf Github verfügbar. Mehr Infos unter: zeigwasdumachst.de
+
 						<h3 class="f4 b">Wie funktioniert es?</h3>
 						<img src="img/swipe.gif" alt="Swipe Anleitung">
 						<details>
