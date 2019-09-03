@@ -30,33 +30,23 @@
 
 		      	<div class="page page-info shadow-1">
 					<div class="pa3">
-
-
-						Worum geht's?
-Nach dem Tinder-Prinzip werden dir Instagram-Posts für Aktivitäten und Veranstaltungen in Dessau-Roßlau vorgeschlagen. Durch einen swipe nach rechts, kannst du dir Posts merken.
-
-Wie sollte ich Posts in die App stellen?
-Das wichtigste ist, dass in dem Post der Hashtag #dessaumatchen vorkommt. Als nächstes wäre es gut, wenn sowohl Titel als auch Datum ganz oben stehen würden, damit wir den Post in unserer App besser auslesen können.
-
-Wie kann ich an der App mitarbeiten?
-Wir geben im Aktionsladen „Zeig, was Du machst!” Programmier-Workshops. Unser Code ist öffentlich auf Github verfügbar. Mehr Infos unter: zeigwasdumachst.de
-
 						<h3 class="f4 b">Wie funktioniert es?</h3>
 						<img src="img/swipe.gif" alt="Swipe Anleitung">
 						<details>
 							<summary class="f4 b" style="margin-top: 10px">Worum geht's?</summary>
 							<p>
-							Die Zielgruppe sind junge Menschen zwischen 12 und 27 Jahren. Die Anwendung nutzt Beiträge der Plattform Instagram, die mit dem Hashtag <strong class="bg-yellow">#dessaumatchen</strong> markiert sind. Wir würden uns freuen, wenn Interesse an einer Zusammenarbeit durch Verwendung des Hashtags besteht. Gerne können wir dann Weiteres klären.
+							Nach dem Tinder-Prinzip werden dir Instagram-Posts für Aktivitäten und Veranstaltungen in Dessau-Roßlau vorgeschlagen. Durch einen swipe nach rechts, kannst du dir Posts merken.
 						</details><p>
 							<details>
-								<summary class="f4 b">Wie kann ich mitmachen?</summary>
+								<summary class="f4 b">Wie kann ich an der App mitarbeiten?</summary>
 								<p>
-								Wir, vom Projekt „Zeig, was Du machst!”, arbeiten derzeit an einem Webportal für Dessau-Roßlau. Nach dem Tinder-Prinzip sollen algorithmusbasierte Empfehlungen für Aktivitäten und Veranstaltungen in der Stadt vorgeschlagen werden.
+								Wir geben im Aktionsladen „Zeig, was Du machst!” Programmier-Workshops. Unser Code ist öffentlich auf <a href="https://github.com/jenswittmann/zeigwasdumachst" target="_blank">Github</a> verfügbar. Mehr Infos unter: <a href="https://zeigwasdumachst.de" target="_blank">zeigwasdumachst.de</a>
 							</details><p>
 								<details>
 									<summary class="f4 b">Wie sollte ich Posts in die App stellen?</summary>
 									<p>
-									Das wichtigste ist, dass in dem Post der Hashtag <strong class="bg-yellow">#dessaumatchen</strong> vorkommt. Als nächstes wäre es gut, wenn sowohl Titel als auch Datum ganz oben stehen würde, damit wir den Post besser auslesen können.
+										Das wichtigste ist, dass in dem Post der Hashtag #dessaumatchen vorkommt. Als nächstes wäre es gut, wenn sowohl Titel als auch Datum ganz oben stehen würden, damit wir den Post in unserer App besser auslesen können.
+
 									<img src="img/Beispielpost.png" style="margin-top: 10px;border:1px solid black" alt="Beispielpost">
 								</details><p>
 						<h3 class="f4 b">Alles klar?</h3>
@@ -191,7 +181,7 @@ Wir geben im Aktionsladen „Zeig, was Du machst!” Programmier-Workshops. Unse
 			}
 
 		</script>
-		
+
 		<script type="text/javascript" src="js/main.js?<?php echo md5_file('js/main.js'); ?>"></script>
 
 	</body>
