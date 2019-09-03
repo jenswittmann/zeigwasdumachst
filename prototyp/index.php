@@ -21,7 +21,8 @@
 				<p class="absolute z-1 w-100 f6 tc pa4">
 					<span class="f1 db">🙌🏻</span>
 					Alles gematchted! Poste deine Tipps für Dessau-Roßlau auf Instagram mit dem Hashtag #dessaumatchen!
-					<a href="javascript:tinderInit()" class="db tc ph1 pv2 mt2 bg-dark br2">Aktualisieren</a>
+					<!--a href="javascript:tinderInit()" class="db tc ph1 pv2 mt2 bg-dark br2">Aktualisieren</a-->
+					<img src="img/findr-qr.svg" alt="Findr QR Code">
 				</p>
 
 				<div class="finder pb5">
@@ -56,9 +57,6 @@
 							<a href="javascript:requestPermission()" class="db tc ph1 pv2 mb2 bg-dark br2">Push Nachrichten aktivieren</a>
 							<span class="f7">Push Nachrichten aktiviert: <span id="pushstatus">unavailable</span></span>
 						</p>
-
-
-
 
 						<ul class="list f7 pa0 mt5">
 							<li><a href="https://vonderrolle.org/impressum.html" target="_blank" class="mb2 db">Impressum</a></li>
