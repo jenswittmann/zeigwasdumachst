@@ -45,7 +45,7 @@
 								<details>
 									<summary class="f4 b">Wie sollte ich Posts in die App stellen?</summary>
 									<p>
-										Das wichtigste ist, dass in dem Post der Hashtag #dessaumatchen vorkommt. Als nächstes wäre es gut, wenn sowohl Titel als auch Datum ganz oben stehen würden, damit wir den Post in unserer App besser auslesen können.
+										Das wichtigste ist, dass in dem Post der Hashtag <b class="b bg-yellow">#dessaumatchen</b> vorkommt. Als nächstes wäre es gut, wenn sowohl Titel als auch Datum ganz oben stehen würden, damit wir den Post in unserer App besser auslesen können.
 
 									<img src="img/Beispielpost.png" style="margin-top: 10px;border:1px solid black" alt="Beispielpost">
 								</details><p>
