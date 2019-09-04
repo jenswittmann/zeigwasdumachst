@@ -2,7 +2,8 @@
 
 Wir wollen mit dir zusammen eine neue Info Webseite für Jugendliche in Dessau-Roßlau entwickeln. Schicke uns deinen Pull Request oder komme vorbei!
 
-[zeigwasdumachst.de](https://zeigwasdumachst.de)
+[zeigwasdumachst.de](https://zeigwasdumachst.de)  
+[Finde App Präsentation](https://docs.google.com/presentation/d/e/2PACX-1vQtIcRzkCGycLv6_sYtqM64HU3OgxA-0KfQc_JLG0SPvKKc5VlV8hcQ7xHlo2NHNHdelUDv4ySd4w-b/pub?start=true&loop=true&delayms=5000)
 
 ## Was brauche ich?
 
