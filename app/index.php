@@ -35,7 +35,7 @@
 						<details>
 							<summary class="f4 b" style="margin-top: 10px">Worum geht's?</summary>
 							<p>
-							Nach dem Tinder-Prinzip werden dir Instagram-Posts für Aktivitäten und Veranstaltungen in Dessau-Roßlau vorgeschlagen. Durch einen swipe nach rechts, kannst du dir Posts merken.
+							Nach dem Tinder-Prinzip werden dir Instagram-Posts für Aktivitäten und Veranstaltungen in Dessau-Roßlau vorgeschlagen. Durch einen Swipe nach rechts, kannst du dir Posts merken.
 						</details><p>
 							<details>
 								<summary class="f4 b">Wie kann ich an der App mitarbeiten?</summary>
