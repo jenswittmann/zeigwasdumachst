@@ -57,7 +57,7 @@ if (count($medias) > 0) {
 		# daten für email
 		$emailPosts[] = '
 			<p style="max-width: 300px; border-bottom: 2px solid black;">
-				<img src="'$imgUrl.$thisPost['img'].'" width="100%">
+				<img src="'.$imgUrl.$thisPost['img'].'" width="100%">
 				'.$thisPost['text'].'<br>
 				<a href="'.$blacklistUrl.$thisPost['id'].'">Post verbergen</a>
 			</p>
