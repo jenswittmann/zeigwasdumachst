@@ -2,11 +2,13 @@
 
 # variablen
 $allPosts = [];
+$emailSend = false;
 $emailPosts = [];
 $emailTo = 'hallo@zeigwasdumachst.de';
 $emailFrom = 'adam@zeigwasdumachst.de';
 $emailSubject = 'Neue Instagramposts';
 $blacklistUrl = 'https://findr.zeigwasdumachst.de/blacklist.php?id=';
+$imgUrl = 'https://findr.zeigwasdumachst.de/cache/';
 
 # bibilothek initalisieren
 use InstagramScraper\Exception\InstagramException;
@@ -15,7 +17,7 @@ require 'SimpleImage.php';
 $instagram = new \InstagramScraper\Instagram();
 
 # posts mit hashtag anfordern
-$medias = $instagram->getMediasByTag('dessaumatchen', 15);
+$medias = $instagram->getMediasByTag('dessaumatchen', 25);
 
 # aktuelle posts auslesen
 $lastPosts = json_decode( file_get_contents('instagram.json'), true );
@@ -40,9 +42,9 @@ if (count($medias) > 0) {
 		$imageName = 'cache/'.$media->getId().'.jpg';
 		$image = new \claviska\SimpleImage();
 		$image
-    ->fromString( file_get_contents( $media->getImageHighResolutionUrl() ) )
-    ->resize(500, null)
-    ->toFile($imageName, 'image/jpeg');
+	    ->fromString( file_get_contents( $media->getImageHighResolutionUrl() ) )
+	    ->resize(500, null)
+	    ->toFile($imageName, 'image/jpeg');
 
 		# daten für datei
 		$thisPost = [
@@ -51,18 +53,18 @@ if (count($medias) > 0) {
 			'text' => $caption
 		];
 		$allPosts[] = $thisPost;
+		
+		# daten für email
+		$emailPosts[] = '
+			<p style="max-width: 300px; border-bottom: 2px solid black;">
+				<img src="'$imgUrl.$thisPost['img'].'" width="100%">
+				'.$thisPost['text'].'<br>
+				<a href="'.$blacklistUrl.$thisPost['id'].'">Post verbergen</a>
+			</p>
+		';
 
 		if ($thisPost['id'] > $lastPostId) {
-
-			# daten für email
-			$emailPosts[] = '
-				<p style="max-width: 300px; border-bottom: 2px solid black;">
-					<img src="'.$thisPost['img'].'" width="100%">
-					'.$thisPost['text'].'<br>
-					<a href="'.$blacklistUrl.$thisPost['id'].'">Post verbergen</a>
-				</p>
-			';
-
+			$emailSend = true;
 		}
 	}
 
@@ -72,7 +74,7 @@ if (count($medias) > 0) {
 file_put_contents('instagram.json', json_encode( $allPosts ) );
 
 # email versenden
-if ( count($emailPosts) > 0 ) {
+if ( $emailSend == true ) {
 	$header[] = 'MIME-Version: 1.0';
 	$header[] = 'Content-type: text/html; charset=UTF-8';
 	$header[] = 'From: '.$emailFrom;
