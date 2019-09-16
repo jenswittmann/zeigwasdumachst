@@ -11,6 +11,7 @@ $blacklistUrl = 'https://findr.zeigwasdumachst.de/blacklist.php?id=';
 # bibilothek initalisieren
 use InstagramScraper\Exception\InstagramException;
 require __DIR__ . '/vendor/autoload.php';
+require 'SimpleImage.php';
 $instagram = new \InstagramScraper\Instagram();
 
 # posts mit hashtag anfordern
@@ -35,10 +36,18 @@ if (count($medias) > 0) {
 			$caption = preg_replace($regexUrl, '<a href="'.$url[0].'" target="_blank">'.$url[0].'</a> ', $caption);
 		}
 
+		# bilder klein rechnen
+		$imageName = 'cache/'.$media->getId().'.jpg';
+		$image = new \claviska\SimpleImage();
+		$image
+    ->fromString( file_get_contents( $media->getImageHighResolutionUrl() ) )
+    ->resize(500, null)
+    ->toFile($imageName, 'image/jpeg');
+
 		# daten für datei
 		$thisPost = [
 			'id' => $media->getId(),
-			'img' => $media->getImageHighResolutionUrl(),
+			'img' => $imageName,
 			'text' => $caption
 		];
 		$allPosts[] = $thisPost;
