@@ -14,7 +14,7 @@ require __DIR__ . '/vendor/autoload.php';
 $instagram = new \InstagramScraper\Instagram();
 
 # posts mit hashtag anfordern
-$medias = $instagram->getMediasByTag('dessaumatchen', 50);
+$medias = $instagram->getMediasByTag('dessaumatchen', 30);
 
 # aktuelle posts auslesen
 $lastPosts = json_decode( file_get_contents('instagram.json'), true );
