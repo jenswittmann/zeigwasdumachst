@@ -15,7 +15,7 @@ require 'SimpleImage.php';
 $instagram = new \InstagramScraper\Instagram();
 
 # posts mit hashtag anfordern
-$medias = $instagram->getMediasByTag('dessaumatchen', 30);
+$medias = $instagram->getMediasByTag('dessaumatchen', 15);
 
 # aktuelle posts auslesen
 $lastPosts = json_decode( file_get_contents('instagram.json'), true );
