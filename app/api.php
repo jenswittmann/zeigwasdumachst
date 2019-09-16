@@ -37,7 +37,7 @@ if (count($allPosts) > 0) {
 				<li data-post-id="<?php echo $post['id']; ?>"
 					data-post-img="<?php echo $post['img']; ?>"
 					data-post-content="<?php echo strip_tags($post['text']); ?>" class="pane<?php echo $i + 1; ?>">
-					<img src="<?php echo $post['img']; ?>" width="300" alt="">
+					<img src="<?php echo $post['img']; ?>" width="300" alt="" draggable="false">
 					<p class="f6 hyphens-auto ma0">
 						<?php
 							$post = $post['text'];

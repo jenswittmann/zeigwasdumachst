@@ -31,7 +31,7 @@
 		      	<div class="page page-info shadow-1">
 					<div class="pa3">
 						<h3 class="f4 b">Wie funktioniert es?</h3>
-						<img src="img/swipe.gif" alt="Swipe Anleitung">
+						<img src="img/swipe.gif" alt="Swipe Anleitung" draggable="false">
 						<details>
 							<summary class="f4 b" style="margin-top: 10px">Worum geht's?</summary>
 							<p>
