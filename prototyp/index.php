@@ -77,8 +77,8 @@
 							Teile unsere APP mit deinen Freunden:
 						</p>
 						<ul class="list pa0">
-							<li class="mb3"><a href="whatsapp://send?text=Teste%20die%20Findr%20APP%3A%20https%3A%2F%2Fprototyp.zeig-was-du-machst.de" class="db tc ph1 pv2 bg-dark br2">WhatsApp</a></li>
-							<li><a href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fprototyp.zeig-was-du-machst.de" target="_blank" class="db tc ph1 pv2 bg-dark br2">Facebook</a></li>
+							<li class="mb3"><a href="whatsapp://send?text=Teste%20die%20Findr%20APP%3A%20https%3A%2F%2Ffindr.zeigwasdumachst.de" class="db tc ph1 pv2 bg-dark br2">WhatsApp</a></li>
+							<li><a href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffindr.zeigwasdumachst.de" target="_blank" class="db tc ph1 pv2 bg-dark br2">Facebook</a></li>
 						</ul>
 					</div>
 				</div>

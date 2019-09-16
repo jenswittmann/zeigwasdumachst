@@ -6,7 +6,7 @@ $emailPosts = [];
 $emailTo = 'hallo@zeigwasdumachst.de';
 $emailFrom = 'adam@zeigwasdumachst.de';
 $emailSubject = 'Neue Instagramposts';
-$blacklistUrl = 'https://prototyp.zeig-was-du-machst.de/blacklist.php?id=';
+$blacklistUrl = 'https://findr.zeigwasdumachst.de/blacklist.php?id=';
 
 # bibilothek initalisieren
 use InstagramScraper\Exception\InstagramException;
