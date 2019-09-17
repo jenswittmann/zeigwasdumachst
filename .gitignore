@@ -2,3 +2,6 @@ app/config.codekit3
 app/instagram.json
 app/blacklist.json
 app/cache/
+
+# IntelliJ
+.idea
