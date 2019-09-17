@@ -78,5 +78,5 @@ if ( $emailSend == true ) {
 	$header[] = 'MIME-Version: 1.0';
 	$header[] = 'Content-type: text/html; charset=UTF-8';
 	$header[] = 'From: '.$emailFrom;
-	mail($emailTo, $emailSubject, implode('', $emailPosts), implode("\r\n", $header) );
+	mail($emailTo, $emailSubject, implode('', array_reverse($emailPosts) ), implode("\r\n", $header) );
 }
