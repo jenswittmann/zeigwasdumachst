@@ -9,6 +9,7 @@ $emailFrom = 'adam@zeigwasdumachst.de';
 $emailSubject = 'Neue Instagramposts';
 $blacklistUrl = 'https://findr.zeigwasdumachst.de/blacklist.php?id=';
 $imgUrl = 'https://findr.zeigwasdumachst.de/';
+$environment = isset($_GET['islive']) ? 'live' : 'dev';
 
 # bibilothek initalisieren
 use InstagramScraper\Exception\InstagramException;
@@ -53,7 +54,7 @@ if (count($medias) > 0) {
 			'text' => $caption
 		];
 		$allPosts[] = $thisPost;
-		
+
 		# daten für email
 		$emailPosts[] = '
 			<p style="max-width: 300px; border-bottom: 2px solid black;">
@@ -74,7 +75,7 @@ if (count($medias) > 0) {
 file_put_contents('instagram.json', json_encode( $allPosts ) );
 
 # email versenden
-if ( $emailSend == true ) {
+if ( $emailSend == true && $environment == 'live' ) {
 	$header[] = 'MIME-Version: 1.0';
 	$header[] = 'Content-type: text/html; charset=UTF-8';
 	$header[] = 'From: '.$emailFrom;
